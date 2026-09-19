@@ -1,0 +1,184 @@
+# Japanese learning system
+
+This folder is Ramya's Japanese study record. It is not a codebase — treat every
+file here as knowledge state, not source code.
+
+## Read this first, every session
+
+At the start of any session in this folder, read:
+
+1. `STATUS.md` — the dashboard: current level, counts, weak spots
+2. `brain/grammar.md`, `brain/vocab.md`, `brain/kanji.md` — everything known so far
+3. `log/mistakes.md` — active problem areas
+
+`index.html` is the compiled reference — read the brain files, not this, when
+preparing a test. It is output, not state.
+
+Do not ask "what do you know?" — it's written down. Read it.
+
+## The core rule
+
+**State lives in files, never in conversation.** Every session starts blank, so
+anything learned, tested, or corrected must be written to disk *at the moment it
+happens* — not saved up for the end of the session. Sessions get closed abruptly.
+
+After a test: write results before showing the summary.
+After ingesting notes: write the brain updates before reporting what was added.
+
+## Confidence levels
+
+Every item in `brain/` carries a level and a last-tested date.
+
+| Level | Meaning | Review interval |
+|-------|---------|-----------------|
+| L0 | New, never tested | next session |
+| L1 | Got it wrong recently | next session |
+| L2 | Shaky | 3 days |
+| L3 | Getting there | 1 week |
+| L4 | Comfortable | 3 weeks |
+| L5 | Solid | 2 months |
+
+An item is **due** when `last tested + interval <= today`. Correct answer moves
+it up one level. Wrong answer drops it to L1 and adds a line to `log/mistakes.md`.
+
+Never skip a level on a single correct answer. Levels are earned slowly.
+
+## Commands
+
+- `/ingest` — pull new notes from `notes/inbox/` into the brain
+- `/test` — run a quiz session
+- `/status` — show progress
+- `/wrap` — catch-all: write down anything learned conversationally this session
+
+## Learner profile — important
+
+Ramya has been in class since **2 Dec 2025**, four classes a month, one-to-one.
+The class is **conversational** — speaking and listening, not reading.
+
+**She cannot read or write kana or kanji yet.** All her notes are in romaji.
+This is deliberate for now; reading and writing are a target for the coming
+months, not today.
+
+What this means in practice:
+
+- **Test in romaji + English only.** Never show a question in kana or kanji and
+  expect an answer. Doing so tests reading, which she hasn't learned, and turns
+  a grammar question into a wall.
+- **Still record kana and kanji in the brain files.** The textbook slides and
+  the verb sheet already carry them. Store them now, hidden from testing — when
+  the reading phase starts the material is already in place and she'll be
+  learning to read words she can already say. That's a big head start, so don't
+  throw the script away.
+- `brain/kanji.md` is therefore a **parked reference**, not an active deck.
+  Nothing in it gets tested until she says the reading phase has started.
+
+**Romaji standard:** Hepburn, with particles spelled as they are *pronounced* —
+`wa`, `o`, `e` (not `ha`, `wo`, `he`). Her teacher's notes are inconsistent
+(`ha`/`wa`, `syoyu`/`shouyu`, `tusugi`/`tsugi`); normalise when ingesting, and
+note the written form in parentheses on the particle entries, since that's the
+bridge to reading later. Long vowels: `ou`/`uu` as the notes do (`koohii`,
+`shuumatsu`).
+
+## Curriculum
+
+The class follows **みんなの日本語 初級1 (Minna no Nihongo Elementary 1)**, but
+loosely — the teacher covers conversational grammar ahead of the book's order.
+Use the book's lesson numbers for grouping vocabulary, not for pacing.
+
+## Writing style for the brain files
+
+Keep the tables sorted by level ascending (weakest first) — the stuff that needs
+work should be at the top of the file where it's visible.
+
+Use plain markdown tables. No code fences around them. They get edited constantly,
+so keep rows on one line and don't pretty-align columns — alignment breaks on
+every edit and creates noisy diffs.
+
+Romaji is the primary form in every table. Kana and kanji go in their own
+columns where known, for later.
+
+## Tone during tests
+
+Be a real teacher, not a cheerleader. If an answer is wrong, say it's wrong and
+explain why. If an answer is technically correct but unnatural, say so — that
+distinction matters more than the score. Don't pad results with praise.
+
+## The textbook
+
+`index.html` is every class note rearranged by topic instead of by date — the
+thing she actually reads. Published at https://claude.ai/artifact/LrN9xnZ5KvASCDaVqyWhV9,
+which is how she opens it on her phone.
+
+Regenerate it whenever `/ingest` adds something, then republish to that same URL
+so the phone copy stays current. Never publish it as a new artifact; the link
+has to stay stable.
+
+Conventions inside it:
+
+- Romaji is primary. Kana and kanji live in `<div class="jp-s">` elements which
+  are hidden until the reader flips the script toggle. Always fill them in when
+  you know them, even now — that's the head start for the reading phase.
+- Sentences she built herself in class get `class="mine"`, which renders them in
+  vermilion. Teacher examples stay plain. Keep that distinction honest; it is
+  the clearest record of what she can actually produce.
+- Correct the teacher's romaji inconsistencies silently, but when the notes
+  contain an outright error (a wrong word, not a spelling), fix it and add a
+  `.call.warn` box naming the correction.
+
+### House style for the textbook
+
+These are corrections Ramya made directly. Hold to them.
+
+- **No em dashes anywhere.** Use a colon, a comma, a full stop or brackets.
+- **No narration.** Do not write "from your 24 June class", "your teacher's
+  example", "this was the best thing in", or anything else that talks about the
+  lessons instead of the language. The book is a reference, not a diary.
+- **No instructions to the reader** scattered through the page. No "tap this",
+  no "worth memorising", no "say these aloud until". State the rule and stop.
+- Section intros are one or two factual sentences about the grammar, or absent.
+- Callouts are for a rule, a trap or an exception. If a callout does not teach
+  something, delete it rather than rewrite it.
+- Sections are numbered and separated by a rule. Keep the numbering matching the
+  contents list.
+
+### Theme
+
+Set once, do not drift from it when regenerating.
+
+**Type.** Both faces are real Japanese families from Google Fonts, so the Latin
+was drawn to sit beside kana.
+
+- Headings, the masthead, section numbers, Japanese script: **Shippori Mincho**
+- Body, romaji sentences, tables, UI: **Zen Kaku Gothic New**
+
+Because headings and the kana/kanji share one family, flipping the script toggle
+reads as the same book rather than a second typeface arriving.
+
+**Colour.** Named traditional Japanese colours, used as tokens:
+
+| Token | Colour | Role |
+|---|---|---|
+| `--washi` | kinari, undyed cloth | page ground |
+| `--sumi` | sumi, ink | text |
+| `--ai` | ai, indigo | headings, links, Japanese script, callouts |
+| `--shu` | shu, vermilion seal | the masthead hanko only |
+| `--mine-bg` | faint warm tint | the sentences she wrote herself |
+
+Her own sentences get a barely-there warm tint and a 2px edge at about 30%
+vermilion, with the word "yours" in muted italic. Full-strength vermilion was
+too distracting across a hundred lines, so it now appears exactly once, on the
+masthead seal. Do not reintroduce it to the lines.
+
+**Ornament.** Three Japanese elements, and no more than three:
+
+- A **seigaiha** wave band between every section, with about 58px of air each
+  side. This is what separates sections, so keep the spacing generous.
+- The section number as a **hanko**, a bordered square holding a kanji numeral
+  (`counter(sec, cjk-ideographic)`). The contents list keeps arabic numerals for
+  scanning; the kanji in the sections doubles as passive number practice.
+- One **vermilion seal** reading 学 in the masthead.
+
+**Other.** Body 17px at 1.62 line height. Square corners, not rounded. A faint
+SVG paper grain on the body background at 3.5% opacity. Every colour is defined
+on bare `:root` first, then redefined for dark mode, so the toggle works in both
+directions.

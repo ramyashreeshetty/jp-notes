@@ -1,0 +1,1237 @@
+<title>Ramya no Nihongo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Palette from the traditional Japanese colours: kinari (undyed cloth),
+   sumi (ink), ai (indigo), shu (vermilion seal). */
+:root{
+  --washi:#f4f1e8; --surface:#fcfaf5; --sunk:#ece7da;
+  --sumi:#1f1c17; --sumi-2:#55504a; --sumi-3:#7a736a;
+  --rule:#ddd6c6; --rule-2:#e9e3d6;
+  --ai:#23406e; --ai-soft:#e3e9f2; --on-ai:#fcfaf5;
+  --shu:#a8342a; --shu-soft:#f7e8e3;
+  --mine-bg:#faf5f1; --mine-edge:rgba(168,52,42,.32);
+  --wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.4'%3E%3Cpath d='M-22 22a22 22 0 0 1 44 0M22 22a22 22 0 0 1 44 0'/%3E%3Cpath d='M-22 22a15 15 0 0 1 30 0M22 22a15 15 0 0 1 30 0'/%3E%3Cpath d='M-22 22a8 8 0 0 1 16 0M22 22a8 8 0 0 1 16 0'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --washi:#15171b; --surface:#1d2026; --sunk:#191c21;
+    --sumi:#e9e4d9; --sumi-2:#b3ada2; --sumi-3:#8a8479;
+    --rule:#2e323a; --rule-2:#262a31;
+    --ai:#8fb0dc; --ai-soft:#1e2735; --on-ai:#15171b;
+    --shu:#e0897a; --shu-soft:#2c1f1c;
+    --mine-bg:#201e1d; --mine-edge:rgba(224,137,122,.30);
+  }
+}
+:root[data-theme="dark"]{
+  --washi:#15171b; --surface:#1d2026; --sunk:#191c21;
+  --sumi:#e9e4d9; --sumi-2:#b3ada2; --sumi-3:#8a8479;
+  --rule:#2e323a; --rule-2:#262a31;
+  --ai:#8fb0dc; --ai-soft:#1e2735; --on-ai:#15171b;
+  --shu:#e0897a; --shu-soft:#2c1f1c;
+}
+*{box-sizing:border-box}
+body{
+  background-color:var(--washi);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  color:var(--sumi);
+  font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.62;margin:0;-webkit-text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:790px;margin:0 auto;padding-inline:22px}
+.mincho{font-family:"Shippori Mincho",Georgia,"Yu Mincho",serif}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:color-mix(in srgb,var(--washi) 92%,transparent);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.bar-in{max-width:790px;margin:0 auto;padding:11px 22px;display:flex;gap:10px;
+  align-items:center;flex-wrap:wrap}
+.brand{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;font-size:1.02rem;
+  letter-spacing:.01em;margin-right:auto;white-space:nowrap}
+.brand span{color:var(--ai);font-weight:500}
+#q{flex:1 1 160px;min-width:0;font:inherit;font-size:.9rem;padding:9px 13px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--sumi)}
+#q::placeholder{color:var(--sumi-3)}
+#q:focus{outline:2px solid var(--ai);outline-offset:-1px;border-color:transparent}
+.tog{font:inherit;font-size:.78rem;font-weight:500;letter-spacing:.03em;padding:9px 13px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--sumi-2);
+  cursor:pointer;white-space:nowrap}
+.tog[aria-pressed="true"]{background:var(--ai);border-color:var(--ai);color:var(--on-ai)}
+.tog:focus-visible{outline:2px solid var(--ai);outline-offset:2px}
+
+/* ---------- masthead ---------- */
+header.mast{padding-block:54px 34px}
+h1{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;
+  font-size:clamp(2.1rem,7vw,3.1rem);line-height:1.18;letter-spacing:.005em;
+  margin:0 0 22px;text-wrap:balance}
+h1 em{display:block;font-style:normal;font-size:.36em;letter-spacing:.32em;
+  color:var(--ai);font-weight:500;margin-bottom:12px}
+.mast-top{display:flex;gap:26px;align-items:flex-start;justify-content:space-between}
+.mast-top h1{flex:1 1 auto}
+/* hanko: the vermilion seal stamped on a finished page */
+.seal{flex:none;width:58px;height:58px;margin-top:14px;background:var(--shu);
+  color:#fcfaf5;display:flex;align-items:center;justify-content:center;
+  font-family:"Shippori Mincho",Georgia,serif;font-size:1.95rem;font-weight:500;
+  line-height:1;border-radius:2px;transform:rotate(-4deg);
+  box-shadow:0 1px 3px rgba(31,28,23,.16)}
+@media (max-width:420px){.seal{width:46px;height:46px;font-size:1.5rem;margin-top:8px}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px;background:var(--rule-2);border:1px solid var(--rule);overflow:hidden}
+.fact{background:var(--surface);padding:14px 16px}
+.fact b{display:block;font-family:"Shippori Mincho",Georgia,serif;font-size:1.5rem;
+  font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.fact span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--sumi-3);margin-top:4px}
+
+/* ---------- contents ---------- */
+nav.toc{padding-block:30px;border-top:1px solid var(--rule)}
+.toc-h{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;
+  color:var(--sumi-3);margin-bottom:15px}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px 26px;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:flex;gap:11px;align-items:baseline;padding:6px 0;color:var(--sumi);
+  text-decoration:none;font-size:.93rem;border-bottom:1px solid transparent}
+.toc a:hover{color:var(--ai);border-bottom-color:var(--rule)}
+.toc a::before{content:counter(t,decimal-leading-zero);
+  font-family:"Shippori Mincho",Georgia,serif;font-size:.76rem;color:var(--ai);
+  font-variant-numeric:tabular-nums;flex:none;opacity:.75}
+
+/* ---------- sections ---------- */
+.wrap{counter-reset:sec}
+section{padding-block:0 66px;scroll-margin-top:72px;counter-increment:sec}
+/* seigaiha: the overlapping-wave pattern, as a divider band */
+section::before{content:"";display:block;height:22px;margin-block:58px;
+  background-color:var(--rule);opacity:.85;
+  -webkit-mask-image:var(--wave);mask-image:var(--wave);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:44px 22px;mask-size:44px 22px}
+h2{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;font-size:1.72rem;
+  letter-spacing:.005em;line-height:1.3;margin:0 0 7px;text-wrap:balance}
+/* the section number as a hanko, in kanji numerals */
+h2::before{content:counter(sec,cjk-ideographic);
+  display:flex;align-items:center;justify-content:center;
+  width:2.5em;height:2.5em;margin-bottom:16px;
+  border:1px solid var(--ai);color:var(--ai);
+  font-family:"Shippori Mincho",Georgia,serif;font-size:.92rem;
+  font-weight:500;line-height:1}
+.lede{color:var(--sumi-2);font-size:.95rem;margin:0 0 26px;max-width:60ch}
+h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--sumi-3);
+  font-weight:700;margin:34px 0 13px}
+h3:first-of-type{margin-top:0}
+
+/* ---------- the core object: a line ---------- */
+.lines{display:flex;flex-direction:column;gap:1px;background:var(--rule-2);
+  border:1px solid var(--rule-2);overflow:hidden}
+.line{background:var(--surface);padding:13px 16px;display:grid;gap:4px}
+.jp-r{font-weight:500;font-size:1.05rem;line-height:1.48;letter-spacing:.004em;
+  overflow-wrap:break-word}
+.en{color:var(--sumi-2);font-size:.875rem;line-height:1.5}
+.jp-s{font-family:"Shippori Mincho",Georgia,"Yu Mincho",serif;font-size:1.02rem;
+  color:var(--ai);line-height:1.6;letter-spacing:.02em}
+.note{font-size:.8rem;color:var(--sumi-3);font-style:italic}
+.line.mine{background:var(--mine-bg);box-shadow:inset 2px 0 0 var(--mine-edge)}
+.line.mine .jp-r::after{content:"yours";float:right;font-size:.62rem;font-style:italic;
+  font-weight:400;letter-spacing:.04em;color:var(--sumi-3);
+  margin-left:12px;margin-top:5px}
+
+/* ---------- word grid ---------- */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);overflow:hidden}
+.w{background:var(--surface);padding:11px 14px}
+.w b{display:block;font-weight:500;font-size:.97rem;line-height:1.4}
+.w i{display:block;font-style:normal;color:var(--sumi-2);font-size:.81rem;line-height:1.45}
+.w .jp-s{font-size:.9rem;margin-top:2px}
+
+/* ---------- table ---------- */
+.tscroll{overflow-x:auto;border:1px solid var(--rule-2);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:min(100%,420px)}
+th{text-align:left;font-size:.67rem;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--sumi-3);font-weight:700;padding:11px 15px;
+  border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:11px 15px;border-bottom:1px solid var(--rule-2);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:0}
+td.k{font-weight:500}
+td.g{color:var(--sumi-2)}
+
+/* ---------- callout ---------- */
+.call{background:var(--ai-soft);padding:17px 19px;margin:24px 0;font-size:.91rem;
+  border-left:2px solid var(--ai);line-height:1.6}
+.call b{display:block;font-family:"Shippori Mincho",Georgia,serif;font-size:.95rem;
+  font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ai);margin-bottom:7px}
+.call p{margin:0 0 9px}.call p:last-child{margin-bottom:0}
+.call.warn{background:var(--shu-soft);border-left-color:var(--shu)}
+.call.warn b{color:var(--shu)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:var(--sunk);padding:2px 6px;border-radius:2px}
+
+/* ---------- script toggle ---------- */
+.jp-s{display:none}
+body.script .jp-s{display:block}
+.script-only{display:none}
+body.script .script-only{display:revert}
+
+/* ---------- search ---------- */
+body.filtering section{display:none}
+body.filtering section.hit{display:block}
+body.filtering .line:not(.hit),body.filtering .w:not(.hit),
+body.filtering tbody tr:not(.hit){display:none}
+body.filtering nav.toc,body.filtering header.mast,body.filtering .call{display:none}
+#none{display:none;padding-block:56px;color:var(--sumi-3);text-align:center;font-size:.95rem}
+body.filtering.empty #none{display:block}
+
+footer{padding-block:0 70px;color:var(--sumi-3);font-size:.84rem;line-height:1.6}
+.wave-end{height:22px;margin-block:0 34px;background-color:var(--rule);opacity:.85;
+  -webkit-mask-image:var(--wave);mask-image:var(--wave);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:44px 22px;mask-size:44px 22px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="bar"><div class="bar-in">
+  <div class="brand">Ramya no Nihongo <span>日本語</span></div>
+  <input id="q" type="search" placeholder="Search anything…" autocomplete="off">
+  <button class="tog" id="scriptBtn" aria-pressed="false">あ Script</button>
+  <button class="tog" id="themeBtn">Theme</button>
+</div></div>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="mast-top">
+    <h1><em>日本語</em>Ramya no Nihongo</h1>
+    <div class="seal" aria-hidden="true">学</div>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>23</b><span>classes</span></div>
+    <div class="fact"><b>10</b><span>months</span></div>
+    <div class="fact"><b>18</b><span>topics</span></div>
+    <div class="fact"><b>55</b><span>N5 verbs</span></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-h">Contents</div>
+  <ol>
+    <li><a href="#phrases">Everyday phrases</a></li>
+    <li><a href="#intro">Introducing yourself</a></li>
+    <li><a href="#particles">Particles</a></li>
+    <li><a href="#kosoado">This, that, over there</a></li>
+    <li><a href="#arimasu">Is there, please give me</a></li>
+    <li><a href="#numbers">Numbers &amp; counting</a></li>
+    <li><a href="#dates">Dates, days &amp; time</a></li>
+    <li><a href="#groups">Verbs: the three groups</a></li>
+    <li><a href="#tenses">Verbs: past &amp; negative</a></li>
+    <li><a href="#plain">Verbs: plain &amp; nai form</a></li>
+    <li><a href="#must">Must, do not, do not have to</a></li>
+    <li><a href="#koto">koto: verbs as nouns</a></li>
+    <li><a href="#tameni">tame ni: purpose</a></li>
+    <li><a href="#adj">Adjectives: i and na</a></li>
+    <li><a href="#adjneg">Adjectives: negative &amp; past</a></li>
+    <li><a href="#weather">Weather</a></li>
+    <li><a href="#vocab">Vocabulary by theme</a></li>
+    <li><a href="#diary">The voice diary</a></li>
+  </ol>
+</nav>
+
+
+<section id="phrases">
+<h2>Everyday phrases</h2>
+<p class="lede">Learn these as whole blocks rather than taking them apart.</p>
+
+<h3>Reacting</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Sugoi!</div><div class="en">Great! / Amazing!</div><div class="jp-s">すごい</div></div>
+<div class="line"><div class="jp-r">Subarashii!</div><div class="en">Wonderful, amazing</div><div class="jp-s">すばらしい</div></div>
+<div class="line"><div class="jp-r">Ii ne!</div><div class="en">Nice!</div><div class="jp-s">いいね</div></div>
+<div class="line"><div class="jp-r">Kanpeki</div><div class="en">Perfect</div><div class="jp-s">かんぺき</div></div>
+<div class="line"><div class="jp-r">Honto ni?</div><div class="en">For real? Seriously?</div><div class="jp-s">ほんとに</div></div>
+<div class="line"><div class="jp-r">Sou desu ka</div><div class="en">Is that so? I see.</div><div class="jp-s">そうですか</div></div>
+<div class="line"><div class="jp-r">Taihen desu ne</div><div class="en">That's tough / that sounds like hard work</div><div class="jp-s">大変ですね</div></div>
+<div class="line"><div class="jp-r">Wakarimashita</div><div class="en">Got it. I understand.</div><div class="jp-s">わかりました</div></div>
+<div class="line"><div class="jp-r">Wakarimasu</div><div class="en">I understand <span class="note">ongoing, not just now</span></div><div class="jp-s">わかります</div></div>
+<div class="line"><div class="jp-r">Nande? / Naze? / Doushite?</div><div class="en">Why?</div><div class="jp-s">なんで・なぜ・どうして</div></div>
+<div class="line"><div class="jp-r">Gomen</div><div class="en">Sorry <span class="note">casual</span></div><div class="jp-s">ごめん</div></div>
+</div>
+
+<h3>Encouraging someone</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Ganbatte! / Ganbare!</div><div class="en">You can do this. Go for it.</div><div class="jp-s">がんばって・がんばれ</div></div>
+<div class="line"><div class="jp-r">Ouen shitemasu!</div><div class="en">I'm cheering for you</div><div class="jp-s">応援してます</div></div>
+<div class="line"><div class="jp-r">Tanoshinde!</div><div class="en">Have fun!</div><div class="jp-s">楽しんで</div></div>
+<div class="line"><div class="jp-r">Muri shinaide</div><div class="en">Don't push yourself too hard</div><div class="jp-s">むりしないで</div></div>
+<div class="line"><div class="jp-r">Shinpai shinaide</div><div class="en">Don't worry</div><div class="jp-s">心配しないで</div></div>
+<div class="line"><div class="jp-r">Ki ni shinaide</div><div class="en">It's all good, don't mind it</div><div class="jp-s">気にしないで</div></div>
+<div class="line"><div class="jp-r">Enryo shinaide</div><div class="en">Please don't hold back <span class="note">take as much as you like</span></div><div class="jp-s">遠慮しないで</div></div>
+</div>
+
+<h3>Meeting, parting, resting</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Hajimemashite</div><div class="en">Nice to meet you <span class="note">only the very first time, and only at the start</span></div><div class="jp-s">はじめまして</div></div>
+<div class="line"><div class="jp-r">Yoroshiku onegaishimasu</div><div class="en">Please treat me well / thanks in advance</div><div class="jp-s">よろしくお願いします</div></div>
+<div class="line"><div class="jp-r">Otsukaresama deshita</div><div class="en">Said when someone leaves the office, "good work today"</div><div class="jp-s">お疲れさまでした</div></div>
+<div class="line"><div class="jp-r">Oyasuminasai</div><div class="en">Good night <span class="note">longer, politer</span></div><div class="jp-s">おやすみなさい</div></div>
+<div class="line"><div class="jp-r">Oyasumi!</div><div class="en">Night! <span class="note">casual</span></div><div class="jp-s">おやすみ</div></div>
+<div class="line"><div class="jp-r">Sumimasen</div><div class="en">Excuse me / sorry</div><div class="jp-s">すみません</div></div>
+</div>
+
+<h3>How are you</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Genki desu ka?</div><div class="en">How are you? Doing well?</div><div class="jp-s">元気ですか</div></div>
+<div class="line"><div class="jp-r">Hai, genki desu!</div><div class="en">Yes, I'm good!</div><div class="jp-s">はい、元気です</div></div>
+<div class="line"><div class="jp-r">Hai, ii kanji desu</div><div class="en">Yeah, feeling great <span class="note">ii = good, kanji = feeling</span></div><div class="jp-s">はい、いい感じです</div></div>
+<div class="line"><div class="jp-r">Maa maa</div><div class="en">So-so</div><div class="jp-s">まあまあ</div></div>
+<div class="line"><div class="jp-r">Iie, genki ja nai desu</div><div class="en">No, I'm not doing great</div><div class="jp-s">いいえ、元気じゃないです</div></div>
+</div>
+</section>
+
+<section id="intro">
+<h2>Introducing yourself</h2>
+<p class="lede">Every question has an answer that mirrors it. Swap <code>anata no</code> for <code>watashi no</code> and you have the reply.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Ask</th><th>Answer</th><th>Means</th></tr></thead>
+<tbody>
+<tr><td class="k">Anata no namae wa nan desu ka?</td><td>Watashi no namae wa Ramya desu.</td><td class="g">What's your name?</td></tr>
+<tr><td class="k">Anata wa doko shusshin desu ka?</td><td>Watashi wa Indo shusshin desu.</td><td class="g">Where are you from?</td></tr>
+<tr><td class="k">Anata no shumi wa nan desu ka?</td><td>Watashi no shumi wa geemu desu.</td><td class="g">What's your hobby?</td></tr>
+<tr><td class="k">Anata no suki na tabemono wa nan desu ka?</td><td>Watashi no suki na tabemono wa shouyu raamen desu.</td><td class="g">What's your favourite food?</td></tr>
+<tr><td class="k">Anata no mokuhyou wa nan desu ka?</td><td>Watashi no mokuhyou wa nihongo de hanasu koto desu.</td><td class="g">What's your goal?</td></tr>
+<tr><td class="k">Anata no daigaku wa doko desu ka?</td><td>Watashi no daigaku wa Indo no VTU desu.</td><td class="g">Which university?</td></tr>
+</tbody></table></div>
+
+<h3>Saying what you do</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Watashi wa kaishain desu</div><div class="en">I'm a working professional</div><div class="jp-s">会社員です</div></div>
+<div class="line"><div class="jp-r">Watashi wa Honda no shain desu</div><div class="en">I work for Honda</div><div class="jp-s">ホンダの社員です</div></div>
+<div class="line"><div class="jp-r">Watashi wa deeta enjinia desu</div><div class="en">I'm a data engineer</div></div>
+<div class="line"><div class="jp-r">Watashi wa Indo-jin desu</div><div class="en">I'm Indian</div><div class="jp-s">インド人です</div></div>
+</div>
+<div class="call"><b>Building blocks</b>
+<p><code>nihon</code> (Japan) + <code>jin</code> (person) = <code>nihonjin</code>, Japanese person.
+The same <code>-jin</code> works everywhere: <code>Indo-jin</code>, <code>Amerika-jin</code>.</p>
+<p><code>no</code> means <em>of</em>, so <code>watashi no</code> is literally "I of", meaning my.</p></div>
+</section>
+
+<section id="particles">
+<h2>Particles</h2>
+<p class="lede">The small words that mark what role each thing plays in a sentence.</p>
+
+<div class="tscroll"><table>
+<thead><tr><th>Particle</th><th>Job</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class="k">wa <span class="jp-s script-only">は</span></td><td>Marks the topic, "as for…"</td><td class="g">Watashi <b>wa</b> tabemasu, I eat</td></tr>
+<tr><td class="k">ga <span class="jp-s script-only">が</span></td><td>Marks the subject, points <em>at</em> it</td><td class="g">Watashi <b>ga</b> nihonjin desu, <em>I'm</em> the Japanese one</td></tr>
+<tr><td class="k">no <span class="jp-s script-only">の</span></td><td>Of. Possession, connection</td><td class="g">Nihon <b>no</b> anime, Japanese anime</td></tr>
+<tr><td class="k">o <span class="jp-s script-only">を</span></td><td>The object, what you do it to</td><td class="g">Gohan <b>o</b> tabemasu, I eat rice</td></tr>
+<tr><td class="k">ni <span class="jp-s script-only">に</span></td><td>Time, destination, person</td><td class="g">Gakkou <b>ni</b> ikimasu, I go to school</td></tr>
+<tr><td class="k">de <span class="jp-s script-only">で</span></td><td>Place of action, or method</td><td class="g">Ie <b>de</b> tabemasu, I eat at home</td></tr>
+<tr><td class="k">to <span class="jp-s script-only">と</span></td><td>With, and</td><td class="g">Tomodachi <b>to</b> ikimasu, I go with a friend</td></tr>
+<tr><td class="k">kara <span class="jp-s script-only">から</span></td><td>From</td><td class="g">Tokyo <b>kara</b> kaerimashita, I came back from Tokyo</td></tr>
+</tbody></table></div>
+
+<div class="call"><b>wa versus ga</b>
+<p><code>wa</code> points <em>away</em> from the topic, towards what is said about it.
+<code>ga</code> points <em>back at</em> the subject, singling it out.</p>
+<p><code>Watashi wa nihonjin desu</code>: I am Japanese. An ordinary statement.<br>
+<code>Watashi ga nihonjin desu</code>: <em>I</em> am the Japanese one. Said when someone
+assumed it was your friend.</p></div>
+
+<h3>ni versus de</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Kouen ni ikimasu</div><div class="en">I go <em>to</em> the park (ni, because the park is the destination)</div></div>
+<div class="line"><div class="jp-r">Kouen de asobimasu</div><div class="en">I play <em>in</em> the park (de, because the playing happens there)</div></div>
+<div class="line"><div class="jp-r">Shichi-ji ni okimasu</div><div class="en">I wake up at 7:00 (ni for a point in time)</div></div>
+<div class="line"><div class="jp-r">Densha de ikimasu</div><div class="en">I go by train (de for the method)</div></div>
+<div class="line"><div class="jp-r">Densha de Tokyo ni ikimasu</div><div class="en">I go to Tokyo by train, both at once</div></div>
+</div>
+
+<h3>Stacking them up</h3>
+<p class="lede">Start with a bare sentence and keep adding to it.</p>
+<div class="lines">
+<div class="line"><div class="jp-r">Watashi wa sushi o tabemasu</div><div class="en">I eat sushi</div></div>
+<div class="line"><div class="jp-r">Kyou wa shichi-ji ni sushi o tabemasu</div><div class="en">Today I'll eat sushi at 7:00</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa tomodachi to tomodachi no ie de nihongo o benkyou shimasu</div><div class="en">I study Japanese with a friend at my friend's house</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa juu-ji ni okaasan to kutsu to fuku o mooru de kaimasu</div><div class="en">At 10:00 I'll buy shoes and clothes with my mum at the mall</div></div>
+<div class="line mine"><div class="jp-r">Konshuu no doyoubi wa tomodachi to roku-ji ni haikingu ni ikimasu</div><div class="en">This Saturday I'll go hiking with a friend at 6:00</div></div>
+</div>
+<div class="call"><b>Word order is freer than English</b>
+<p>Once the particles are doing their job, the pieces can move around.
+<code>Watashi wa shichi-ji ni sushi o tabemasu</code> and
+<code>Watashi wa sushi o shichi-ji ni tabemasu</code> are both fine. The verb is what
+cannot move. It always goes at the end.</p></div>
+</section>
+
+<section id="kosoado">
+<h2>This, that, over there</h2>
+<p class="lede">Three distances, two shapes each: one that stands alone, one that goes in front of a noun.</p>
+<div class="tscroll"><table>
+<thead><tr><th></th><th>Stands alone</th><th>Before a noun</th><th>Place</th></tr></thead>
+<tbody>
+<tr><td class="k">Near me</td><td>kore (this one)</td><td>kono hon (this book)</td><td class="g">koko (here)</td></tr>
+<tr><td class="k">Near you</td><td>sore (that one)</td><td>sono hon (that book)</td><td class="g">soko (there)</td></tr>
+<tr><td class="k">Over there</td><td>are (that one over there)</td><td>ano hito (that person)</td><td class="g">asoko (over there)</td></tr>
+<tr><td class="k">Which / what</td><td>nan, nani (what)</td><td>dono hon (which book)</td><td class="g">doko (where)</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><div class="jp-r">Kore wa watashi no purezento desu</div><div class="en">This is my present</div></div>
+<div class="line"><div class="jp-r">Kono purezento wa watashi no mono desu</div><div class="en">This present is mine <span class="note">mono = thing</span></div></div>
+<div class="line"><div class="jp-r">Sore wa hako desu</div><div class="en">That's a box</div></div>
+<div class="line"><div class="jp-r">Sono hako wa watashi no mono desu</div><div class="en">That box is mine</div></div>
+<div class="line"><div class="jp-r">Ano hito wa kawaii desu</div><div class="en">That person is cute</div></div>
+<div class="line"><div class="jp-r">Ano hito no doresu to boushi wa kawaii desu</div><div class="en">That person's dress and hat are cute</div></div>
+<div class="line mine"><div class="jp-r">Ano hito no doresu to boushi wa nihon de yuumei desu</div><div class="en">That person's dress and hat are famous in Japan</div></div>
+<div class="line mine"><div class="jp-r">Kare wa nihon de yuumei na nihon no haiyuu desu</div><div class="en">He's a famous Japanese actor</div></div>
+</div>
+<div class="call"><b>Where is…?</b>
+<p><code>_____ wa doko desu ka?</code> works with any noun.
+<code>Byouin wa doko desu ka?</code> asks where the hospital is.
+<code>Jisho wa doko desu ka?</code> asks where the dictionary is.</p>
+<p>Watch the vowel. <code>Byouin</code> is a <em>hospital</em>, <code>biyouin</code> is a
+<em>hair salon</em>. One extra beat and you are getting a haircut.</p></div>
+</section>
+
+<section id="arimasu">
+<h2>Is there, please give me</h2>
+<p class="lede">Two patterns that cover shops, cafés and asking directions.</p>
+<h3>arimasu: existence</h3>
+<div class="tscroll"><table>
+<thead><tr><th>Form</th><th>Register</th><th>Means</th></tr></thead>
+<tbody>
+<tr><td class="k">aru</td><td class="g">plain</td><td class="g">to exist</td></tr>
+<tr><td class="k">arimasu</td><td class="g">polite</td><td class="g">there is</td></tr>
+<tr><td class="k">arimasu ka?</td><td class="g">polite question</td><td class="g">is there…?</td></tr>
+<tr><td class="k">arimasen</td><td class="g">polite negative</td><td class="g">there isn't</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><div class="jp-r">Zasshi wa arimasu ka?</div><div class="en">Is there a magazine?</div></div>
+<div class="line"><div class="jp-r">Hai, arimasu.</div><div class="en">Yes, there is.</div></div>
+<div class="line"><div class="jp-r">Iie, zasshi wa arimasen.</div><div class="en">No, there's no magazine.</div></div>
+<div class="line"><div class="jp-r">Iie, zasshi wa arimasen. Demo hon wa arimasu.</div><div class="en">No magazine, but there is a book. <span class="note">demo = but</span></div></div>
+<div class="line mine"><div class="jp-r">Eigo no hon wa arimasu ka?</div><div class="en">Is there an English book?</div></div>
+<div class="line mine"><div class="jp-r">Hajime no Ippo no manga wa arimasu ka?</div><div class="en">Do you have the Hajime no Ippo manga?</div></div>
+</div>
+
+<h3>kudasai: please give me</h3>
+<p class="lede">The shape is <strong>thing + number + kudasai</strong>. Open with <code>sumimasen</code>.</p>
+<div class="lines">
+<div class="line"><div class="jp-r">Aisu koohii kudasai.</div><div class="en">An iced coffee, please.</div></div>
+<div class="line"><div class="jp-r">Sumimasen, aisu koohii hitotsu kudasai.</div><div class="en">Excuse me, one iced coffee please.</div></div>
+<div class="line"><div class="jp-r">Sumimasen, atatakai ocha arimasu ka?</div><div class="en">Excuse me, do you have hot green tea?</div></div>
+</div>
+
+<h3>Drinks &amp; temperature</h3>
+<div class="words">
+<div class="w"><b>mizu</b><i>water</i><div class="jp-s">水</div></div>
+<div class="w"><b>ocha</b><i>green tea</i><div class="jp-s">お茶</div></div>
+<div class="w"><b>koucha</b><i>black tea</i><div class="jp-s">紅茶</div></div>
+<div class="w"><b>koohii</b><i>coffee</i><div class="jp-s">コーヒー</div></div>
+<div class="w"><b>juusu</b><i>soft drink, juice</i><div class="jp-s">ジュース</div></div>
+<div class="w"><b>koori</b><i>ice cubes</i><div class="jp-s">氷</div></div>
+<div class="w"><b>atatakai</b><i>warm (a thing)</i><div class="jp-s">あたたかい</div></div>
+<div class="w"><b>tsumetai</b><i>cold (a thing)</i><div class="jp-s">つめたい</div></div>
+<div class="w"><b>atsui</b><i>hot (weather)</i><div class="jp-s">暑い</div></div>
+<div class="w"><b>samui</b><i>cold (weather)</i><div class="jp-s">寒い</div></div>
+</div>
+<div class="call"><b>Two kinds of hot, two kinds of cold</b>
+<p><code>atatakai</code> and <code>tsumetai</code> are for things you touch and drink.
+<code>atsui</code> and <code>samui</code> are for the weather and the room.
+A cold coffee is <code>tsumetai koohii</code>, never <code>samui koohii</code>.</p></div>
+
+<h3>Directions</h3>
+<div class="words">
+<div class="w"><b>hidari</b><i>left</i><div class="jp-s">左</div></div>
+<div class="w"><b>migi</b><i>right</i><div class="jp-s">右</div></div>
+<div class="w"><b>gawa</b><i>side, migi gawa, right side</i><div class="jp-s">側</div></div>
+<div class="w"><b>oku</b><i>back, oku gawa, the back side</i><div class="jp-s">奥</div></div>
+<div class="w"><b>massugu</b><i>straight on</i><div class="jp-s">まっすぐ</div></div>
+<div class="w"><b>magaru / magatte</b><i>turn / turn and…</i><div class="jp-s">曲がる</div></div>
+<div class="w"><b>shingou</b><i>traffic signal</i><div class="jp-s">信号</div></div>
+<div class="w"><b>kado</b><i>corner <span class="note">(kaado = card)</span></i><div class="jp-s">角</div></div>
+<div class="w"><b>tokoro</b><i>place</i><div class="jp-s">所</div></div>
+</div>
+<div class="lines">
+<div class="line"><div class="jp-r">Migi ni magatte…</div><div class="en">Turn right and…</div></div>
+<div class="line"><div class="jp-r">Massugu itta tokoro desu</div><div class="en">It is the place straight ahead <span class="note">iku → itta, went</span></div></div>
+</div>
+</section>
+
+<section id="numbers">
+<h2>Numbers &amp; counting</h2>
+<p class="lede">The hard part is not one to ten. It is the sounds that shift in bigger numbers, and the fact that Japanese groups by <em>ten thousand</em> rather than thousand.</p>
+<div class="tscroll"><table>
+<thead><tr><th>#</th><th>Read</th><th class="script-only">Kanji</th><th>#</th><th>Read</th><th class="script-only">Kanji</th></tr></thead>
+<tbody>
+<tr><td class="k">1</td><td>ichi</td><td class="jp-s script-only">一</td><td class="k">6</td><td>roku</td><td class="jp-s script-only">六</td></tr>
+<tr><td class="k">2</td><td>ni</td><td class="jp-s script-only">二</td><td class="k">7</td><td>nana / shichi</td><td class="jp-s script-only">七</td></tr>
+<tr><td class="k">3</td><td>san</td><td class="jp-s script-only">三</td><td class="k">8</td><td>hachi</td><td class="jp-s script-only">八</td></tr>
+<tr><td class="k">4</td><td>yon / shi</td><td class="jp-s script-only">四</td><td class="k">9</td><td>kyuu / ku</td><td class="jp-s script-only">九</td></tr>
+<tr><td class="k">5</td><td>go</td><td class="jp-s script-only">五</td><td class="k">10</td><td>juu</td><td class="jp-s script-only">十</td></tr>
+</tbody></table></div>
+<h3>Building bigger</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">11: juu ichi &nbsp;·&nbsp; 12: juu ni &nbsp;·&nbsp; 20: ni juu</div><div class="en">Ten plus, then two-tens</div></div>
+<div class="line"><div class="jp-r">100: hyaku &nbsp;·&nbsp; 1,000: sen &nbsp;·&nbsp; 10,000: man</div><div class="en">The big units</div></div>
+<div class="line"><div class="jp-r">123: hyaku ni juu san</div><div class="en">One hundred, two tens, three</div></div>
+<div class="line"><div class="jp-r">1,524: sen go hyaku ni juu yon</div><div class="en"></div></div>
+<div class="line"><div class="jp-r">2026: ni sen ni juu roku</div><div class="en"></div></div>
+<div class="line"><div class="jp-r">28,600: ni man hassen roppyaku</div><div class="en">Two <em>man</em> (10,000s), eight thousand, six hundred</div></div>
+</div>
+<div class="call warn"><b>The sounds that shift</b>
+<p>Some combinations do not say what you would expect. Say these aloud until they
+feel automatic.</p>
+<p><code>600: roppyaku</code> (not roku-hyaku)&nbsp;·&nbsp;<code>800: happyaku</code>&nbsp;·&nbsp;
+<code>8,000: hassen</code>&nbsp;·&nbsp;<code>10,000: ichiman</code> (always with ichi)</p></div>
+
+<h3>Counting things</h3>
+<p class="lede">Two sets. The <code>-tsu</code> set is general purpose; the <code>-ko</code> set is for small round objects. Either works for ordering.</p>
+<div class="tscroll"><table>
+<thead><tr><th>#</th><th>General (-tsu)</th><th>Small objects (-ko)</th></tr></thead>
+<tbody>
+<tr><td class="k">1</td><td>hitotsu</td><td class="g">ikko</td></tr>
+<tr><td class="k">2</td><td>futatsu</td><td class="g">niko</td></tr>
+<tr><td class="k">3</td><td>mittsu</td><td class="g">sanko</td></tr>
+<tr><td class="k">4</td><td>yottsu</td><td class="g">yonko</td></tr>
+<tr><td class="k">5</td><td>itsutsu</td><td class="g">goko</td></tr>
+<tr><td class="k">6</td><td>muttsu</td><td class="g">rokko</td></tr>
+<tr><td class="k">7</td><td>nanatsu</td><td class="g">nanako</td></tr>
+<tr><td class="k">8</td><td>yattsu</td><td class="g">hakko</td></tr>
+<tr><td class="k">9</td><td>kokonotsu</td><td class="g">kyuuko</td></tr>
+<tr><td class="k">10</td><td>tou</td><td class="g">jukko</td></tr>
+<tr><td class="k">11</td><td class="g">not used</td><td class="g">juuikko</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Atatakai koohii hitotsu kudasai</div><div class="en">One hot coffee, please</div></div>
+</div>
+</section>
+
+<section id="dates">
+<h2>Dates, days &amp; time</h2>
+<p class="lede">Dates run big to small: year, then month, then day. Once you have the numbers, it is mostly attaching the right suffix.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Unit</th><th>Suffix</th><th>Ask with</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class="k">Year</td><td>nen <span class="jp-s script-only">年</span></td><td class="g">nan nen</td><td class="g">ni sen ni juu roku nen = 2026</td></tr>
+<tr><td class="k">Month</td><td>gatsu <span class="jp-s script-only">月</span></td><td class="g">nan gatsu</td><td class="g">ichi gatsu = January</td></tr>
+<tr><td class="k">Day</td><td>nichi <span class="jp-s script-only">日</span></td><td class="g">nan nichi</td><td class="g">juu roku nichi = the 16th</td></tr>
+<tr><td class="k">Weekday</td><td>youbi <span class="jp-s script-only">曜日</span></td><td class="g">nan youbi</td><td class="g">ka youbi = Tuesday</td></tr>
+<tr><td class="k">Hour</td><td>ji <span class="jp-s script-only">時</span></td><td class="g">nan ji</td><td class="g">shichi-ji ni = at 7:00</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><div class="jp-r">Kyou wa nan nen nan gatsu nan nichi desu ka?</div><div class="en">What's today's date?</div><div class="jp-s">今日は何年何月何日ですか？</div></div>
+<div class="line mine"><div class="jp-r">Kyou wa ni sen ni juu roku nen, ichi gatsu, juu roku nichi desu</div><div class="en">Today is 16 January 2026</div></div>
+<div class="line"><div class="jp-r">Otanjoubi wa nan nen nan gatsu nan nichi desu ka?</div><div class="en">When's your birthday?</div></div>
+<div class="line mine"><div class="jp-r">Watashi no tanjoubi wa ni sen nen, shi gatsu, juu hachi nichi desu</div><div class="en">My birthday is 18 April 2000</div></div>
+<div class="line"><div class="jp-r">Otanjoubi omedetou!</div><div class="en">Happy birthday! <span class="note">omedetou = congratulations</span></div></div>
+</div>
+<div class="call warn"><b>Months that break the pattern</b>
+<p>April is <code>shi gatsu</code> (not yon), July is <code>shichi gatsu</code> (not nana),
+September is <code>ku gatsu</code> (not kyuu). Three exceptions, worth learning as a set.</p>
+<p>And the 20th is <code>hatsuka</code>, not juu-ni-juu-nichi.</p></div>
+
+<h3>Days of the week</h3>
+<p class="lede">Each day is named for an element.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Day</th><th>Japanese</th><th>Element</th><th class="script-only">Script</th></tr></thead>
+<tbody>
+<tr><td class="k">Sunday</td><td>nichi youbi</td><td class="g">sun</td><td class="jp-s script-only">日曜日</td></tr>
+<tr><td class="k">Monday</td><td>getsu youbi</td><td class="g">moon</td><td class="jp-s script-only">月曜日</td></tr>
+<tr><td class="k">Tuesday</td><td>ka youbi</td><td class="g">fire</td><td class="jp-s script-only">火曜日</td></tr>
+<tr><td class="k">Wednesday</td><td>sui youbi</td><td class="g">water</td><td class="jp-s script-only">水曜日</td></tr>
+<tr><td class="k">Thursday</td><td>moku youbi</td><td class="g">wood</td><td class="jp-s script-only">木曜日</td></tr>
+<tr><td class="k">Friday</td><td>kin youbi</td><td class="g">gold</td><td class="jp-s script-only">金曜日</td></tr>
+<tr><td class="k">Saturday</td><td>do youbi</td><td class="g">earth</td><td class="jp-s script-only">土曜日</td></tr>
+</tbody></table></div>
+
+<h3>When</h3>
+<div class="words">
+<div class="w"><b>kyou</b><i>today</i><div class="jp-s">今日</div></div>
+<div class="w"><b>ashita</b><i>tomorrow</i><div class="jp-s">明日</div></div>
+<div class="w"><b>kinou</b><i>yesterday</i><div class="jp-s">昨日</div></div>
+<div class="w"><b>ima</b><i>now</i><div class="jp-s">今</div></div>
+<div class="w"><b>ato de</b><i>later, after</i><div class="jp-s">後で</div></div>
+<div class="w"><b>mou</b><i>already / anymore</i><div class="jp-s">もう</div></div>
+<div class="w"><b>itsu</b><i>when?</i><div class="jp-s">いつ</div></div>
+<div class="w"><b>asa</b><i>morning</i><div class="jp-s">朝</div></div>
+<div class="w"><b>hiru</b><i>daytime</i><div class="jp-s">昼</div></div>
+<div class="w"><b>yoru</b><i>evening, night</i><div class="jp-s">夜</div></div>
+<div class="w"><b>hayaku</b><i>early, fast</i><div class="jp-s">早く</div></div>
+<div class="w"><b>osoku</b><i>late</i><div class="jp-s">遅く</div></div>
+</div>
+
+<h3>Weeks, weekends, ends of things</h3>
+<p class="lede"><code>matsu</code> means the end of something. Attach it to a span of time.</p>
+<div class="words">
+<div class="w"><b>shuumatsu</b><i>weekend</i><div class="jp-s">週末</div></div>
+<div class="w"><b>konshuu</b><i>this week</i><div class="jp-s">今週</div></div>
+<div class="w"><b>konshuumatsu</b><i>this weekend</i><div class="jp-s">今週末</div></div>
+<div class="w"><b>raishuumatsu</b><i>next weekend</i><div class="jp-s">来週末</div></div>
+<div class="w"><b>senshuumatsu</b><i>last weekend</i><div class="jp-s">先週末</div></div>
+<div class="w"><b>getsumatsu</b><i>end of the month</i><div class="jp-s">月末</div></div>
+<div class="w"><b>nenmatsu</b><i>year end</i><div class="jp-s">年末</div></div>
+<div class="w"><b>heijitsu</b><i>weekdays</i><div class="jp-s">平日</div></div>
+</div>
+<div class="call warn"><b>Next and last</b>
+<p>Next is <code>rai-</code>, last is <code>sen-</code>. The pattern holds across the board:
+<code>senshuu</code> last week, <code>konshuu</code> this week, <code>raishuu</code> next week.</p>
+<p>Your 28 January notes have <code>raishuumatsu</code> against both "next weekend" and
+"last weekend". Last weekend is <code>senshuumatsu</code>.</p></div>
+
+<h3>Counting days</h3>
+<p class="lede">Three different jobs, three different endings.</p>
+<div class="lines">
+<div class="line"><div class="jp-r">mikka</div><div class="en">the 3rd of the month, or three days</div></div>
+<div class="line"><div class="jp-r">mikka kan</div><div class="en">for a duration of three days <span class="note">kan = span</span></div></div>
+<div class="line"><div class="jp-r">mikka me</div><div class="en">the third day <span class="note">me = -th, the ordinal</span></div></div>
+<div class="line mine"><div class="jp-r">Kyou wa Ganesha no omatsuri no mikka me desu</div><div class="en">Today is the third day of the Ganesha festival</div></div>
+<div class="line mine"><div class="jp-r">Ganesha no omatsuri wa tooka kan arimasu</div><div class="en">The Ganesha festival goes on for ten days</div></div>
+</div>
+</section>
+
+<section id="groups">
+<h2>Verbs: the three groups</h2>
+<p class="lede">Every verb belongs to one of three groups. The group decides how it changes, so learning the group once makes every later form follow.</p>
+
+<h3>Group 1: <em>ru</em> verbs</h3>
+<p class="lede">End in <code>ru</code>. Drop the <code>ru</code>, add <code>masu</code>.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Plain</th><th>Means</th><th>masu form</th><th class="script-only">Script</th></tr></thead>
+<tbody>
+<tr><td class="k">miru</td><td class="g">to see, watch</td><td>mimasu</td><td class="jp-s script-only">見る → 見ます</td></tr>
+<tr><td class="k">taberu</td><td class="g">to eat</td><td>tabemasu</td><td class="jp-s script-only">食べる → 食べます</td></tr>
+<tr><td class="k">kaeru</td><td class="g">to change</td><td>kaemasu</td><td class="jp-s script-only">変える → 変えます</td></tr>
+<tr><td class="k">hajimeru</td><td class="g">to begin</td><td>hajimemasu</td><td class="jp-s script-only">始める</td></tr>
+</tbody></table></div>
+
+<h3>Group 2: <em>u</em>-sound verbs</h3>
+<p class="lede">Do not end in <code>ru</code>. Change the last sound to its <em>i</em> version, then add <code>masu</code>: <code>ku→ki</code>, <code>mu→mi</code>, <code>u→i</code>, <code>gu→gi</code>, <code>su→shi</code>, <code>tsu→chi</code>, <code>ru→ri</code>.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Plain</th><th>Means</th><th>masu form</th><th class="script-only">Script</th></tr></thead>
+<tbody>
+<tr><td class="k">kaku</td><td class="g">to write</td><td>kakimasu</td><td class="jp-s script-only">書く</td></tr>
+<tr><td class="k">nomu</td><td class="g">to drink</td><td>nomimasu</td><td class="jp-s script-only">飲む</td></tr>
+<tr><td class="k">kau</td><td class="g">to buy</td><td>kaimasu</td><td class="jp-s script-only">買う</td></tr>
+<tr><td class="k">oyogu</td><td class="g">to swim</td><td>oyogimasu</td><td class="jp-s script-only">泳ぐ</td></tr>
+<tr><td class="k">hanasu</td><td class="g">to talk</td><td>hanashimasu</td><td class="jp-s script-only">話す</td></tr>
+<tr><td class="k">tatsu</td><td class="g">to stand</td><td>tachimasu</td><td class="jp-s script-only">立つ</td></tr>
+<tr><td class="k">kaeru</td><td class="g">to come back</td><td>kaerimasu</td><td class="jp-s script-only">帰る</td></tr>
+<tr><td class="k">suwaru</td><td class="g">to sit down</td><td>suwarimasu</td><td class="jp-s script-only">座る</td></tr>
+<tr><td class="k">hashiru</td><td class="g">to run</td><td>hashirimasu</td><td class="jp-s script-only">走る</td></tr>
+<tr><td class="k">aruku</td><td class="g">to walk</td><td>arukimasu</td><td class="jp-s script-only">歩く</td></tr>
+</tbody></table></div>
+<div class="call warn"><b>Verbs that end in ru but are not Group 1</b>
+<p>Some verbs <em>end</em> in <code>ru</code> and still belong to Group 2:
+<code>kaeru</code> (come back), <code>suwaru</code>, <code>hashiru</code>. These have to be
+learned one by one, because the spelling will not tell you.</p>
+<p>There are also two different <code>kaeru</code>. 変える, to change, is Group 1 and becomes
+<code>kaemasu</code>. 帰る, to come back, is Group 2 and becomes <code>kaerimasu</code>.</p></div>
+
+<h3>Group 3: the two irregulars</h3>
+<div class="tscroll"><table>
+<thead><tr><th>Plain</th><th>Means</th><th>masu</th><th>nai</th><th class="script-only">Script</th></tr></thead>
+<tbody>
+<tr><td class="k">suru</td><td class="g">to do</td><td>shimasu</td><td>shinai</td><td class="jp-s script-only">する</td></tr>
+<tr><td class="k">kuru</td><td class="g">to come</td><td>kimasu</td><td>konai</td><td class="jp-s script-only">来る</td></tr>
+</tbody></table></div>
+<div class="call"><b>suru makes verbs out of nouns</b>
+<p>Attach <code>shimasu</code> to a noun and you have a verb.
+<code>Souji o shimasu</code>, I clean. <code>Ryouri o shimasu</code>, I cook.
+<code>Benkyou o shimasu</code>, I study. <code>Kaimono o shimasu</code>, I shop.</p></div>
+</section>
+
+<section id="tenses">
+<h2>Verbs: past &amp; negative</h2>
+<p class="lede">Four polite forms from one stem. Everything you say is one of these four.</p>
+<div class="tscroll"><table>
+<thead><tr><th></th><th>Positive</th><th>Negative</th></tr></thead>
+<tbody>
+<tr><td class="k">Now / future</td><td>tabe<b>masu</b>, I eat</td><td>tabe<b>masen</b>, I don't eat</td></tr>
+<tr><td class="k">Past</td><td>tabe<b>mashita</b>, I ate</td><td>tabe<b>masen deshita</b>, I didn't eat</td></tr>
+<tr><td class="k">Question</td><td>tabe<b>masu ka?</b>, do you eat?</td><td>tabe<b>masen ka?</b>, shall we eat?</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><div class="jp-r">Watashi wa eiga o mimasu</div><div class="en">I watch a movie</div></div>
+<div class="line"><div class="jp-r">Watashi wa eiga o mimasen</div><div class="en">I don't watch movies</div></div>
+<div class="line"><div class="jp-r">Watashi wa eiga o mimashita</div><div class="en">I watched a movie</div></div>
+<div class="line"><div class="jp-r">Watashi wa eiga o mimasen deshita</div><div class="en">I didn't watch a movie</div></div>
+<div class="line"><div class="jp-r">Ayano-san wa eiga o mimasu ka?</div><div class="en">Do you watch movies?</div></div>
+<div class="line"><div class="jp-r">Eiga o mimasen ka?</div><div class="en">Shall we watch a movie? <span class="note">the negative question is an invitation</span></div></div>
+</div>
+<div class="call"><b>masen ka is an invitation</b>
+<p>It looks like "do you not watch movies?" but it works as "shall we?". Softer and more
+polite than a direct suggestion.</p></div>
+
+<h3>Asking what someone did</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Nani o shimasu ka?</div><div class="en">What will you do? / What do you do?</div></div>
+<div class="line"><div class="jp-r">Nani o shimashita ka?</div><div class="en">What did you do?</div></div>
+<div class="line"><div class="jp-r">Kyou wa nani o shimasu ka?</div><div class="en">What are you doing today?</div></div>
+<div class="line"><div class="jp-r">Kinou wa nani o shimashita ka?</div><div class="en">What did you do yesterday?</div></div>
+<div class="line"><div class="jp-r">Senshuu no nichiyoubi wa nani o shimashita ka?</div><div class="en">What did you do last Sunday?</div></div>
+<div class="line"><div class="jp-r">Itsu gohan o tabemasu ka?</div><div class="en">When will you eat?</div></div>
+<div class="line"><div class="jp-r">Ima, tabemasu. / Ato de, tabemasu. / Mou, tabemashita.</div><div class="en">Now. / Later. / Already did.</div></div>
+</div>
+
+<h3>Everyday answers</h3>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Asagohan o tabemasu</div><div class="en">I eat breakfast</div></div>
+<div class="line mine"><div class="jp-r">Gyuunyuu o nomimasu</div><div class="en">I drink milk <span class="note">tounyuu = soy milk</span></div></div>
+<div class="line mine"><div class="jp-r">Tomodachi ni tegami o kakimasu</div><div class="en">I write a letter to a friend</div></div>
+<div class="line mine"><div class="jp-r">Shashin o torimashita</div><div class="en">I took a photo</div></div>
+<div class="line mine"><div class="jp-r">Omise ni ikimashita</div><div class="en">I went to a shop</div></div>
+<div class="line mine"><div class="jp-r">Tomodachi to raamen o tabemashita</div><div class="en">I ate ramen with a friend</div></div>
+<div class="line mine"><div class="jp-r">Otousan to okaasan to raamen o tabemashita</div><div class="en">I ate ramen with my dad and my mum</div></div>
+<div class="line mine"><div class="jp-r">Harry Potter no eiga o mimashita</div><div class="en">I watched a Harry Potter film</div></div>
+<div class="line mine"><div class="jp-r">Hajime no Ippo no manga o yomimashita</div><div class="en">I read the Hajime no Ippo manga</div></div>
+<div class="line mine"><div class="jp-r">Hanabi o mimashita</div><div class="en">I watched fireworks</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa mooru de kaimono o shimashita</div><div class="en">I went shopping at the mall</div></div>
+</div>
+<div class="call"><b>Verb or noun?</b>
+<p>Several words pair up. <code>Kaimasu</code> is the verb <em>to buy</em>,
+<code>kaimono</code> is the noun <em>shopping</em>. The same holds for <code>tabemasu</code>
+and <code>tabemono</code> (food), <code>nomimasu</code> and <code>nomimono</code> (drink).
+The <code>-mono</code> ending means "thing".</p></div>
+</section>
+
+<section id="plain">
+<h2>Verbs: plain &amp; nai form</h2>
+<p class="lede">The plain form is used with friends and family. It is also the base most other grammar is built from, so it matters beyond casual speech.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Group</th><th>Rule for nai</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td class="k">1. ru verbs</td><td class="g">drop <code>ru</code>, add <code>nai</code></td><td>miru → minai &nbsp;·&nbsp; taberu → tabenai</td></tr>
+<tr><td class="k">2. u verbs</td><td class="g">last sound to its <em>a</em> version + <code>nai</code></td><td>kaku → kakanai &nbsp;·&nbsp; nomu → nomanai</td></tr>
+<tr><td class="k">3. irregular</td><td class="g">just learn them</td><td>suru → shinai &nbsp;·&nbsp; kuru → konai</td></tr>
+</tbody></table></div>
+<div class="tscroll"><table>
+<thead><tr><th>Plain</th><th>nai form</th><th>Plain</th><th>nai form</th></tr></thead>
+<tbody>
+<tr><td class="k">kaku</td><td class="g">kakanai</td><td class="k">oyogu</td><td class="g">oyoganai</td></tr>
+<tr><td class="k">nomu</td><td class="g">nomanai</td><td class="k">hanasu</td><td class="g">hanasanai</td></tr>
+<tr><td class="k">kau</td><td class="g">kawanai</td><td class="k">tatsu</td><td class="g">tatanai</td></tr>
+<tr><td class="k">kaeru (return)</td><td class="g">kaeranai</td><td class="k">suwaru</td><td class="g">suwaranai</td></tr>
+<tr><td class="k">hashiru</td><td class="g">hashiranai</td><td class="k">iku</td><td class="g">ikanai</td></tr>
+<tr><td class="k">yomu</td><td class="g">yomanai</td><td class="k">yasumu</td><td class="g">yasumanai</td></tr>
+</tbody></table></div>
+<div class="call warn"><b>kau becomes kawanai, not kaanai</b>
+<p>Verbs ending in a bare <code>u</code> slip a <code>w</code> in.
+<code>Kau</code> becomes <code>kawanai</code>. It is the only place that <code>w</code>
+appears.</p></div>
+
+<h3>Building a negative sentence</h3>
+<p class="lede">Start with the bare negative, then add detail.</p>
+<div class="lines">
+<div class="line"><div class="jp-r">Watashi wa sushi o tabenai</div><div class="en">I don't eat sushi</div></div>
+<div class="line"><div class="jp-r">Watashi wa resutoran de sushi o tabenai</div><div class="en">…at restaurants</div></div>
+<div class="line"><div class="jp-r">Watashi wa resutoran de kazoku to sushi o tabenai</div><div class="en">…at restaurants with my family</div></div>
+<div class="line"><div class="jp-r">Watashi wa kouen ni ikanai</div><div class="en">I don't go to the park</div></div>
+<div class="line"><div class="jp-r">Watashi wa asa ni kouen ni ikanai</div><div class="en">…in the morning</div></div>
+<div class="line"><div class="jp-r">Watashi wa asa ni hitori de kouen ni ikanai</div><div class="en">…alone <span class="note">hitori de = by myself</span></div></div>
+<div class="line"><div class="jp-r">Kyou wa gakkou de nihongo o benkyou shinai</div><div class="en">I'm not studying Japanese at school today</div></div>
+<div class="line"><div class="jp-r">Hachi-ji ni ie de yasumanai</div><div class="en">I don't rest at home at eight</div></div>
+</div>
+<div class="call"><b>yo softens the plain form</b>
+<p>Plain form can sound blunt. Adding <code>yo</code> warms it up.
+<code>Watashi wa kouen ni inu o miru tame ni iku yo</code> lands as friendly rather
+than curt.</p></div>
+
+<h3>Rest</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">yasumu</div><div class="en">to rest <span class="note">verb</span></div><div class="jp-s">休む</div></div>
+<div class="line"><div class="jp-r">yasumi</div><div class="en">a day off, absence <span class="note">noun</span></div><div class="jp-s">休み</div></div>
+<div class="line"><div class="jp-r">oyasuminasai</div><div class="en">good night, literally "you may rest"</div><div class="jp-s">おやすみなさい</div></div>
+</div>
+</section>
+
+<section id="must">
+<h2>Must, do not, do not have to</h2>
+<p class="lede">Three patterns, all built on the <code>nai</code> form.</p>
+
+<h3>1. Must, have to</h3>
+<p class="lede">Take the <code>nai</code> form, drop <code>nai</code>, add <code>nakute wa naranai</code>. In speech this contracts to <code>nakucha</code>, which is what you will usually hear.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Register</th><th>Ending</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class="k">Plain</td><td class="g">nakute wa naranai</td><td>tabenakute wa naranai, you must eat</td></tr>
+<tr><td class="k">Polite</td><td class="g">nakute wa narimasen</td><td>nomanakute wa narimasen</td></tr>
+<tr><td class="k">Spoken</td><td class="g">nakucha</td><td>ikanakucha, I have to go</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><div class="jp-r">Ashita wa kaisha ni ikanakute wa naranai</div><div class="en">I have to go to work tomorrow</div></div>
+<div class="line"><div class="jp-r">Asa ni mizu o nomanakute wa naranai</div><div class="en">I have to drink water in the morning</div></div>
+<div class="line"><div class="jp-r">Sorosoro ikanakucha!</div><div class="en">I should get going soon <span class="note">sorosoro = about time</span></div></div>
+<div class="line"><div class="jp-r">Sorosoro ie ni kaeranakucha!</div><div class="en">I should head home soon</div></div>
+<div class="line mine"><div class="jp-r">Ashita wa asa hayaku okinakucha!</div><div class="en">I have to get up early tomorrow</div></div>
+<div class="line"><div class="jp-r">Isoganakucha!</div><div class="en">I have to hurry! <span class="note">isogu = to rush</span></div></div>
+<div class="line"><div class="jp-r">Okuremasu! / Okurechau!</div><div class="en">I'm going to be late!</div></div>
+</div>
+
+<h3>2. Please do not</h3>
+<p class="lede"><code>nai</code> form + <code>de kudasai</code>.</p>
+<div class="lines">
+<div class="line"><div class="jp-r">Tabenaide kudasai</div><div class="en">Please don't eat</div></div>
+<div class="line"><div class="jp-r">Sawaranaide kudasai</div><div class="en">Please don't touch <span class="note">sawaru = to touch</span></div></div>
+<div class="line"><div class="jp-r">Watashi no hon o sawaranaide kudasai</div><div class="en">Please don't touch my book</div></div>
+<div class="line"><div class="jp-r">Ie no naka de hashiranaide kudasai</div><div class="en">Please don't run in the house</div></div>
+</div>
+<div class="call"><b>Inside the house</b>
+<p><code>Ie de hashiranaide kudasai</code> is grammatically correct, but
+<code>ie no naka de hashiranaide kudasai</code>, "inside the house", is what a Japanese
+speaker actually says.</p></div>
+
+<h3>3. You do not have to</h3>
+<p class="lede"><code>nai</code> form + <code>nakutemo ii desu</code>, literally "even if you do not, it is fine".</p>
+<div class="lines">
+<div class="line"><div class="jp-r">Tabenakutemo ii desu</div><div class="en">You don't have to eat</div></div>
+<div class="line"><div class="jp-r">Konakutemo ii desu</div><div class="en">You don't have to come</div></div>
+<div class="line"><div class="jp-r">Ashita watashi wa konakutemo ii desu ka?</div><div class="en">Do I have to come tomorrow? <span class="note">literally "is it okay if I don't?"</span></div></div>
+<div class="line"><div class="jp-r">Koko de tabetemo ii desu</div><div class="en">It's fine to eat here <span class="note">the permission version</span></div></div>
+<div class="line"><div class="jp-r">Koko de tabenakutemo ii desu</div><div class="en">You don't have to eat here</div></div>
+<div class="line"><div class="jp-r">Shashin o tottemo ii desu</div><div class="en">It's fine to take a photo</div></div>
+<div class="line"><div class="jp-r">Shashin o toranakutemo ii desu</div><div class="en">You don't have to take a photo</div></div>
+<div class="line"><div class="jp-r">Keigo o tsukawanakutemo ii desu yo!</div><div class="en">You don't have to use polite Japanese <span class="note">keigo = respectful language</span></div></div>
+<div class="line"><div class="jp-r">Yoyaku shinakutemo ii desu!</div><div class="en">You don't need a reservation</div></div>
+</div>
+
+<h3>Refusing</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Yaranai</div><div class="en">I won't do it <span class="note">plain</span></div></div>
+<div class="line"><div class="jp-r">Yarimasen / Shimasen</div><div class="en">I won't do it <span class="note">polite</span></div></div>
+<div class="line"><div class="jp-r">Mou, yarimasen</div><div class="en">I won't do it anymore</div></div>
+<div class="line"><div class="jp-r">Daijoubu desu! Watashi ga haraimasu</div><div class="en">It is fine, I will pay <span class="note">harau = to pay; ga because you're insisting it's you</span></div></div>
+</div>
+</section>
+
+<section id="koto">
+<h2>koto: verbs as nouns</h2>
+<p class="lede">Add <code>koto</code> to a plain verb and it becomes a noun: eating, reading, swimming. This is how you say you like doing something.</p>
+<div class="lines">
+<div class="line"><div class="jp-r">Taberu koto ga suki desu</div><div class="en">I like eating</div></div>
+<div class="line"><div class="jp-r">Chai o nomu koto ga suki desu</div><div class="en">I like drinking chai</div></div>
+<div class="line"><div class="jp-r">Anime o miru koto ga suki desu</div><div class="en">I like watching anime</div></div>
+<div class="line"><div class="jp-r">Yomu koto ga suki desu</div><div class="en">I like reading</div></div>
+<div class="line mine"><div class="jp-r">Watashi no mokuhyou wa nihongo de hanasu koto desu</div><div class="en">My goal is to speak in Japanese</div></div>
+</div>
+<div class="call"><b>Why ga and not o</b>
+<p>With <code>suki</code>, the thing you like takes <code>ga</code>, not <code>o</code>:
+<code>Sushi ga suki desu</code>. In English "I like sushi" makes sushi feel like the object.
+In Japanese it is the subject of "is liked".</p></div>
+
+<h3>Longer subjects</h3>
+<p class="lede">Once a verb is a noun you can describe it, stack it, and put it at the head of a sentence.</p>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Sushi o taberu koto wa tanoshii desu</div><div class="en">Eating sushi is fun</div></div>
+<div class="line mine"><div class="jp-r">Sushi o tomodachi to taberu koto wa totemo tanoshii desu</div><div class="en">Eating sushi with friends is really fun</div></div>
+<div class="line mine"><div class="jp-r">Okinawa no umi de oyogu koto wa ninki desu</div><div class="en">Swimming in the sea in Okinawa is popular</div></div>
+<div class="line mine"><div class="jp-r">Benkyou suru koto wa muzukashii desu</div><div class="en">Studying is hard</div></div>
+<div class="line mine"><div class="jp-r">Nihongo o benkyou suru koto wa muzukashii desu</div><div class="en">Studying Japanese is hard</div></div>
+<div class="line mine"><div class="jp-r">Nihongo o eigo de benkyou suru koto wa muzukashii desu</div><div class="en">Studying Japanese in English is hard</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa nihongo de hanasu koto ga chotto hazukashii desu</div><div class="en">I'm a bit shy about speaking in Japanese <span class="note">hazukashii = shy, embarrassed</span></div></div>
+</div>
+</section>
+
+<section id="tameni">
+<h2>tame ni: purpose</h2>
+<p class="lede">Plain verb + <code>tame ni</code> means in order to. The purpose comes first, the action second, which is the reverse of English.</p>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Watashi wa eigakan ni eiga o miru tame ni ikimasu</div><div class="en">I'm going to the cinema to watch a film</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa kouen ni inu o miru tame ni ikimasu</div><div class="en">I go to the park to see the dogs</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa nihon ni sushi o taberu tame ni ikimasu</div><div class="en">I'm going to Japan to eat sushi</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa nihongo o nihonjin to hanasu tame ni benkyou shimasu</div><div class="en">I study Japanese in order to speak with Japanese people</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa Bangaloor ni ibento no tame ni ikimashita</div><div class="en">I went to Bangalore for an event <span class="note">after a noun it's just no tame ni</span></div></div>
+</div>
+
+<h3>Because</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Nazenara _____ kara desu</div><div class="en">Because _____</div></div>
+<div class="line mine"><div class="jp-r">Nazenara purezen ga atta kara desu</div><div class="en">Because I had a presentation</div></div>
+<div class="line"><div class="jp-r">Demo</div><div class="en">But</div></div>
+<div class="line"><div class="jp-r">Soshite</div><div class="en">And also</div></div>
+</div>
+
+<h3>hajimete: for the first time</h3>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Shingeki no Kyojin o hajimete mimashita!</div><div class="en">I watched Attack on Titan for the first time</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa Ramya-san ni hajimete aimashita</div><div class="en">I met Ramya for the first time</div></div>
+<div class="line mine"><div class="jp-r">Watashi wa Ayano-san to nihongo de hajimete hanashimashita</div><div class="en">I spoke with Ayano in Japanese for the first time</div></div>
+</div>
+<div class="call"><b>Where hajimemashite comes from</b>
+<p>The greeting <code>hajimemashite</code> is this same word. It means "for the very first
+time", which is why it only works once per person, and only at the start of a conversation.</p></div>
+</section>
+
+<section id="adj">
+<h2>Adjectives: i and na</h2>
+<p class="lede">Two families. <strong>i-adjectives are what you know instantly</strong>: feeling, instinct. <strong>na-adjectives need time and observation</strong>: concepts, states, judgements.</p>
+
+<h3>i-adjectives: instant reactions</h3>
+<div class="words">
+<div class="w"><b>subarashii</b><i>amazing</i></div>
+<div class="w"><b>kawaii</b><i>cute</i></div>
+<div class="w"><b>sugoi</b><i>great</i></div>
+<div class="w"><b>oishii</b><i>delicious</i></div>
+<div class="w"><b>mazui</b><i>disgusting</i></div>
+<div class="w"><b>tanoshii</b><i>fun</i></div>
+<div class="w"><b>ureshii</b><i>happy</i></div>
+<div class="w"><b>kowai</b><i>scary</i></div>
+<div class="w"><b>hayai</b><i>fast, early</i></div>
+<div class="w"><b>osoi</b><i>slow, late</i></div>
+<div class="w"><b>ii / yoi</b><i>good</i></div>
+<div class="w"><b>warui</b><i>bad</i></div>
+<div class="w"><b>isogashii</b><i>busy</i></div>
+<div class="w"><b>muzukashii</b><i>difficult</i></div>
+<div class="w"><b>yasashii</b><i>easy, kind</i></div>
+<div class="w"><b>hazukashii</b><i>shy, embarrassing</i></div>
+</div>
+
+<h3>na-adjectives: considered judgements</h3>
+<div class="words">
+<div class="w"><b>genki na</b><i>well, energetic</i></div>
+<div class="w"><b>suki na</b><i>liked</i></div>
+<div class="w"><b>kirai na</b><i>disliked</i></div>
+<div class="w"><b>ninki na</b><i>popular</i></div>
+<div class="w"><b>yuumei na</b><i>famous</i></div>
+<div class="w"><b>kantan na</b><i>easy, simple</i></div>
+<div class="w"><b>hima na</b><i>free, nothing to do</i></div>
+<div class="w"><b>kirei na</b><i>beautiful, clean</i></div>
+<div class="w"><b>teinei na</b><i>careful, tidy, polite</i></div>
+</div>
+<div class="call warn"><b>kirei is not an i-adjective</b>
+<p>It ends in <code>i</code>, but it behaves as a na-adjective: <code>kirei na umi</code>,
+and the negative is <code>kirei ja nai</code>, never <code>kireikunai</code>.
+<code>Yuumei</code> is the same. When in doubt, ask whether the word is an instant reaction
+or a considered one.</p></div>
+
+<h3>The three shapes</h3>
+<p class="lede">Every adjective can be said three ways. The shapes are identical; only the word changes.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Shape</th><th>Pattern</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td class="k">General</td><td>Sushi wa oishii desu</td><td class="g">Sushi is delicious, speaking generally</td></tr>
+<tr><td class="k">This one</td><td>Kono sushi wa oishii desu</td><td class="g">This sushi is delicious, this one specifically</td></tr>
+<tr><td class="k">Naming it</td><td>Kore wa oishii sushi desu</td><td class="g">This is delicious sushi, a fact about the type</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><div class="jp-r">Neko wa kawaii desu / Kono neko wa kawaii desu / Kore wa kawaii neko desu</div><div class="en">Cats are cute / This cat is cute / This is a cute cat</div></div>
+<div class="line"><div class="jp-r">Densha wa hayai desu / Kono densha wa totemo hayai desu / Kore wa totemo hayai densha desu</div><div class="en">Trains are fast / This train is very fast / This is a very fast train</div></div>
+<div class="line mine"><div class="jp-r">Konshuu wa isogashii desu</div><div class="en">This week is busy</div></div>
+<div class="line mine"><div class="jp-r">Kono kaisha wa totemo isogashii desu</div><div class="en">This company is very busy</div></div>
+<div class="line mine"><div class="jp-r">Umi wa kirei desu / Kono umi wa kirei desu / Kore wa kirei na umi desu</div><div class="en">The sea is beautiful / This sea is beautiful / This is a beautiful sea</div></div>
+<div class="line mine"><div class="jp-r">Kyou no tenki wa warui desu</div><div class="en">Today's weather is bad</div></div>
+<div class="line mine"><div class="jp-r">Anime wa meccha tanoshii desu</div><div class="en">Anime is super fun</div></div>
+</div>
+<div class="call"><b>Intensity</b>
+<p><code>Totemo</code> means very, neutral to formal. <code>Meccha</code> means very,
+casual.<br>
+<code>Sukoshi</code> means a little, polite. <code>Chotto</code> means a little, casual.</p></div>
+</section>
+
+<section id="adjneg">
+<h2>Adjectives: negative &amp; past</h2>
+<p class="lede">The two families behave differently here.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Family</th><th>Negative rule</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class="k">i-adjective</td><td class="g">drop the final <code>i</code>, add <code>kunai</code></td><td>oishii → oishikunai</td></tr>
+<tr><td class="k">na-adjective</td><td class="g">add <code>ja nai</code></td><td>suki → suki ja nai</td></tr>
+<tr><td class="k">i-adjective, past</td><td class="g">drop the final <code>i</code>, add <code>katta</code></td><td>tanoshii → tanoshikatta desu</td></tr>
+<tr><td class="k">na-adjective, past</td><td class="g">add <code>deshita</code></td><td>genki → genki deshita</td></tr>
+</tbody></table></div>
+<div class="tscroll"><table>
+<thead><tr><th>Positive</th><th>Negative</th><th>Positive</th><th>Negative</th></tr></thead>
+<tbody>
+<tr><td class="k">subarashii</td><td class="g">subarashikunai</td><td class="k">genki</td><td class="g">genki ja nai</td></tr>
+<tr><td class="k">kawaii</td><td class="g">kawaikunai</td><td class="k">suki</td><td class="g">suki ja nai</td></tr>
+<tr><td class="k">oishii</td><td class="g">oishikunai</td><td class="k">kirai</td><td class="g">kirai ja nai</td></tr>
+<tr><td class="k">tanoshii</td><td class="g">tanoshikunai</td><td class="k">ninki</td><td class="g">ninki ja nai</td></tr>
+<tr><td class="k">kowai</td><td class="g">kowakunai</td><td class="k">yuumei</td><td class="g">yuumei ja nai</td></tr>
+<tr><td class="k">hayai</td><td class="g">hayakunai</td><td class="k">kantan</td><td class="g">kantan ja nai</td></tr>
+<tr><td class="k">osoi</td><td class="g">osokunai</td><td class="k">hima</td><td class="g">hima ja nai</td></tr>
+<tr><td class="k">warui</td><td class="g">warukunai</td><td class="k">kirei</td><td class="g">kirei ja nai</td></tr>
+<tr><td class="k">isogashii</td><td class="g">isogashikunai</td><td class="k">teinei</td><td class="g">teinei ja nai</td></tr>
+<tr><td class="k">muzukashii</td><td class="g">muzukashikunai</td><td class="k">ii / yoi</td><td class="g">yokunai</td></tr>
+</tbody></table></div>
+<div class="call warn"><b>ii is irregular</b>
+<p>The negative of <code>ii</code> is <code>yokunai</code>, never <code>iikunai</code>.
+It reverts to the older form <code>yoi</code> before changing, and every form of
+<code>ii</code> does this.</p></div>
+
+<h3>The four-step scale</h3>
+<p class="lede">Between a word and its opposite sit two polite middles. Japanese leans on them constantly, because the blunt version is rude.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Good end</th><th>Not bad</th><th>Not good</th><th>Bad end</th></tr></thead>
+<tbody>
+<tr><td class="k">oishii<br><span class="g">delicious</span></td><td class="g">mazukunai<br>not disgusting</td><td class="g">oishikunai<br>not delicious</td><td class="k">mazui<br><span class="g">disgusting</span></td></tr>
+<tr><td class="k">ii / yoi<br><span class="g">good</span></td><td class="g">warukunai<br>not bad</td><td class="g">yokunai<br>not good</td><td class="k">warui<br><span class="g">bad</span></td></tr>
+<tr><td class="k">kantan<br><span class="g">easy</span></td><td class="g">muzukashikunai<br>not difficult</td><td class="g">kantan ja nai<br>not easy</td><td class="k">muzukashii<br><span class="g">difficult</span></td></tr>
+<tr><td class="k">suki<br><span class="g">like</span></td><td class="g">kirai ja nai<br>don't dislike</td><td class="g">suki ja nai<br>don't like</td><td class="k">kirai<br><span class="g">hate</span></td></tr>
+</tbody></table></div>
+<div class="call"><b>Where to stand on the scale</b>
+<p><code>Nattou wa mazui desu</code> is honest but harsh. In a restaurant, say
+<code>nattou wa oishikunai desu</code>, "it is not delicious". Same opinion, no offence
+caused.</p></div>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Sushi wa mazukunai desu</div><div class="en">Sushi isn't bad</div></div>
+<div class="line mine"><div class="jp-r">Eigo wa muzukashikunai desu</div><div class="en">English isn't difficult</div></div>
+<div class="line mine"><div class="jp-r">Nihongo wa kantan ja nai desu</div><div class="en">Japanese isn't easy</div></div>
+<div class="line mine"><div class="jp-r">Kono geemu wa suki ja nai desu</div><div class="en">I don't like this game</div></div>
+<div class="line mine"><div class="jp-r">Kore wa muzukashikunai tesuto desu</div><div class="en">This is a test that isn't difficult</div></div>
+<div class="line mine"><div class="jp-r">Ano hito no shigoto wa teinei ja nai desu</div><div class="en">That person's work isn't careful</div></div>
+</div>
+<div class="call"><b>Asking with a negative</b>
+<p><code>Oishikunai?</code> means "is it not good?". A negative question is how you fish
+for agreement, exactly as in English. <code>Kawaikunai?</code>, is it not cute?</p></div>
+</section>
+
+<section id="weather">
+<h2>Weather</h2>
+<p class="lede"><code>Kyou no tenki wa nan desu ka?</code> asks what the weather is today.</p>
+<div class="words">
+<div class="w"><b>hare</b><i>sunny</i><div class="jp-s">はれ</div></div>
+<div class="w"><b>kumori</b><i>cloudy</i><div class="jp-s">くもり</div></div>
+<div class="w"><b>ame</b><i>rain</i><div class="jp-s">あめ</div></div>
+<div class="w"><b>yuki</b><i>snow</i><div class="jp-s">ゆき</div></div>
+<div class="w"><b>atsui</b><i>hot</i><div class="jp-s">あつい</div></div>
+<div class="w"><b>samui</b><i>cold</i><div class="jp-s">さむい</div></div>
+<div class="w"><b>suzushii</b><i>cool</i><div class="jp-s">すずしい</div></div>
+<div class="w"><b>atatakai</b><i>warm</i><div class="jp-s">あたたかい</div></div>
+<div class="w"><b>kaze ga tsuyoi</b><i>windy, the wind is strong</i><div class="jp-s">かぜがつよい</div></div>
+<div class="w"><b>kaminari</b><i>thunder</i><div class="jp-s">かみなり</div></div>
+<div class="w"><b>tenki</b><i>weather</i><div class="jp-s">天気</div></div>
+</div>
+<div class="lines">
+<div class="line"><div class="jp-r">Kyou no tenki wa nan desu ka?</div><div class="en">What's the weather today?</div></div>
+<div class="line mine"><div class="jp-r">Kyou no tenki wa ame desu</div><div class="en">It's raining today</div></div>
+<div class="line mine"><div class="jp-r">Kyou wa sukoshi atsui desu</div><div class="en">It's a little hot today</div></div>
+<div class="line"><div class="jp-r">Ame ga futte imasu</div><div class="en">It's raining <span class="note">right now, in progress</span></div></div>
+<div class="line"><div class="jp-r">Ame ga takusan futte imasu</div><div class="en">It's pouring <span class="note">takusan = a lot</span></div></div>
+</div>
+</section>
+
+<section id="vocab">
+<h2>Vocabulary by theme</h2>
+<p class="lede">Everything that did not belong to a grammar point.</p>
+
+<h3>Places</h3>
+<div class="words">
+<div class="w"><b>toire</b><i>toilet</i></div>
+<div class="w"><b>konbini</b><i>convenience store</i></div>
+<div class="w"><b>eki</b><i>station</i><div class="jp-s">駅</div></div>
+<div class="w"><b>basu tei</b><i>bus stop</i></div>
+<div class="w"><b>kaisha</b><i>company</i><div class="jp-s">会社</div></div>
+<div class="w"><b>resutoran</b><i>restaurant</i></div>
+<div class="w"><b>kafe</b><i>café</i></div>
+<div class="w"><b>kissaten</b><i>coffee shop, tearoom</i><div class="jp-s">喫茶店</div></div>
+<div class="w"><b>kouen</b><i>park</i><div class="jp-s">公園</div></div>
+<div class="w"><b>jinja</b><i>shrine</i><div class="jp-s">神社</div></div>
+<div class="w"><b>otera</b><i>temple</i><div class="jp-s">お寺</div></div>
+<div class="w"><b>byouin</b><i>hospital</i><div class="jp-s">病院</div></div>
+<div class="w"><b>biyouin</b><i>hair salon</i><div class="jp-s">美容院</div></div>
+<div class="w"><b>daigaku</b><i>university</i><div class="jp-s">大学</div></div>
+<div class="w"><b>gakkou</b><i>school</i><div class="jp-s">学校</div></div>
+<div class="w"><b>kyoushitsu</b><i>classroom</i><div class="jp-s">教室</div></div>
+<div class="w"><b>eigakan</b><i>cinema</i><div class="jp-s">映画館</div></div>
+<div class="w"><b>ie / uchi</b><i>house / home</i><div class="jp-s">家</div></div>
+<div class="w"><b>jikka</b><i>parents' home</i><div class="jp-s">実家</div></div>
+<div class="w"><b>umi</b><i>sea, beach</i><div class="jp-s">海</div></div>
+<div class="w"><b>suupaa</b><i>supermarket</i></div>
+<div class="w"><b>omise</b><i>shop</i><div class="jp-s">お店</div></div>
+</div>
+
+<h3>Family &amp; people</h3>
+<div class="words">
+<div class="w"><b>kazoku</b><i>family</i><div class="jp-s">家族</div></div>
+<div class="w"><b>otousan</b><i>dad</i><div class="jp-s">お父さん</div></div>
+<div class="w"><b>okaasan</b><i>mum</i><div class="jp-s">お母さん</div></div>
+<div class="w"><b>oniichan</b><i>older brother</i><div class="jp-s">お兄ちゃん</div></div>
+<div class="w"><b>oneechan</b><i>older sister</i><div class="jp-s">お姉ちゃん</div></div>
+<div class="w"><b>otouto</b><i>younger brother</i><div class="jp-s">弟</div></div>
+<div class="w"><b>imouto</b><i>younger sister</i><div class="jp-s">妹</div></div>
+<div class="w"><b>ojiisan</b><i>grandfather</i></div>
+<div class="w"><b>obaasan</b><i>grandmother</i></div>
+<div class="w"><b>ojisan</b><i>uncle</i></div>
+<div class="w"><b>obasan</b><i>aunt</i></div>
+<div class="w"><b>itoko</b><i>cousin</i><div class="jp-s">いとこ</div></div>
+<div class="w"><b>tomodachi</b><i>friend</i><div class="jp-s">友達</div></div>
+<div class="w"><b>douryou</b><i>coworker</i><div class="jp-s">同僚</div></div>
+<div class="w"><b>kare</b><i>he</i><div class="jp-s">彼</div></div>
+<div class="w"><b>kanojo</b><i>she</i><div class="jp-s">彼女</div></div>
+<div class="w"><b>kareshi</b><i>boyfriend</i></div>
+<div class="w"><b>hito</b><i>person</i><div class="jp-s">人</div></div>
+<div class="w"><b>shounen</b><i>boy</i><div class="jp-s">少年</div></div>
+<div class="w"><b>haiyuu</b><i>actor</i><div class="jp-s">俳優</div></div>
+<div class="w"><b>hitori de</b><i>alone, by oneself</i><div class="jp-s">一人で</div></div>
+<div class="w"><b>tonari no hito</b><i>the person next to you</i></div>
+</div>
+<div class="call"><b>One vowel, two relatives</b>
+<p><code>Ojiisan</code> is grandfather, <code>ojisan</code> is uncle.
+<code>Obaasan</code> is grandmother, <code>obasan</code> is aunt. The long vowel is the
+only difference, and it ages them by a generation.</p></div>
+
+<h3>Food &amp; meals</h3>
+<div class="words">
+<div class="w"><b>gohan</b><i>rice, a meal</i><div class="jp-s">ご飯</div></div>
+<div class="w"><b>asagohan</b><i>breakfast</i><div class="jp-s">朝ご飯</div></div>
+<div class="w"><b>hirugohan</b><i>lunch</i><div class="jp-s">昼ご飯</div></div>
+<div class="w"><b>bangohan</b><i>dinner</i><div class="jp-s">晩ご飯</div></div>
+<div class="w"><b>tabemono</b><i>food</i><div class="jp-s">食べ物</div></div>
+<div class="w"><b>nomimono</b><i>drink</i><div class="jp-s">飲み物</div></div>
+<div class="w"><b>gyuunyuu</b><i>milk</i><div class="jp-s">牛乳</div></div>
+<div class="w"><b>tounyuu</b><i>soy milk</i><div class="jp-s">豆乳</div></div>
+<div class="w"><b>niku</b><i>meat</i><div class="jp-s">肉</div></div>
+<div class="w"><b>karai</b><i>spicy</i><div class="jp-s">辛い</div></div>
+<div class="w"><b>kusuri</b><i>medicine</i><div class="jp-s">薬</div></div>
+<div class="w"><b>osake</b><i>alcohol</i><div class="jp-s">お酒</div></div>
+</div>
+
+<h3>Out and about</h3>
+<div class="words">
+<div class="w"><b>densha</b><i>train</i><div class="jp-s">電車</div></div>
+<div class="w"><b>hikouki</b><i>aeroplane</i><div class="jp-s">飛行機</div></div>
+<div class="w"><b>kaban</b><i>bag</i><div class="jp-s">かばん</div></div>
+<div class="w"><b>fuku</b><i>clothes</i><div class="jp-s">服</div></div>
+<div class="w"><b>kutsu</b><i>shoes</i><div class="jp-s">靴</div></div>
+<div class="w"><b>boushi</b><i>hat</i><div class="jp-s">帽子</div></div>
+<div class="w"><b>shashin</b><i>photo</i><div class="jp-s">写真</div></div>
+<div class="w"><b>hanabi</b><i>fireworks</i><div class="jp-s">花火</div></div>
+<div class="w"><b>omatsuri</b><i>festival</i><div class="jp-s">お祭り</div></div>
+<div class="w"><b>yoyaku</b><i>reservation</i><div class="jp-s">予約</div></div>
+<div class="w"><b>shigoto</b><i>work</i><div class="jp-s">仕事</div></div>
+<div class="w"><b>souji</b><i>cleaning</i><div class="jp-s">掃除</div></div>
+<div class="w"><b>benkyou</b><i>study</i><div class="jp-s">勉強</div></div>
+<div class="w"><b>ongaku</b><i>music</i><div class="jp-s">音楽</div></div>
+<div class="w"><b>eiga</b><i>film</i><div class="jp-s">映画</div></div>
+<div class="w"><b>tegami</b><i>letter</i><div class="jp-s">手紙</div></div>
+<div class="w"><b>hon</b><i>book</i><div class="jp-s">本</div></div>
+<div class="w"><b>zasshi</b><i>magazine</i><div class="jp-s">雑誌</div></div>
+<div class="w"><b>jisho</b><i>dictionary</i><div class="jp-s">辞書</div></div>
+<div class="w"><b>inu</b><i>dog</i><div class="jp-s">犬</div></div>
+<div class="w"><b>neko</b><i>cat</i><div class="jp-s">猫</div></div>
+<div class="w"><b>isu</b><i>chair</i><div class="jp-s">椅子</div></div>
+</div>
+
+<h3>Useful small words</h3>
+<div class="words">
+<div class="w"><b>mono</b><i>thing</i><div class="jp-s">物</div></div>
+<div class="w"><b>motto</b><i>more</i></div>
+<div class="w"><b>tsugi</b><i>next</i><div class="jp-s">次</div></div>
+<div class="w"><b>saigo</b><i>last</i><div class="jp-s">最後</div></div>
+<div class="w"><b>takusan</b><i>a lot</i></div>
+<div class="w"><b>tokidoki</b><i>sometimes</i><div class="jp-s">時々</div></div>
+<div class="w"><b>itsumo</b><i>always, usually</i><div class="jp-s">いつも</div></div>
+<div class="w"><b>futsuu wa</b><i>normally</i><div class="jp-s">普通は</div></div>
+<div class="w"><b>amari … masen</b><i>not very often</i></div>
+<div class="w"><b>yukkuri</b><i>slowly</i></div>
+<div class="w"><b>sorosoro</b><i>about time to…</i></div>
+<div class="w"><b>mae ni</b><i>before</i><div class="jp-s">前に</div></div>
+<div class="w"><b>ato de</b><i>after</i><div class="jp-s">後で</div></div>
+<div class="w"><b>naka</b><i>inside</i><div class="jp-s">中</div></div>
+<div class="w"><b>eigo</b><i>English</i><div class="jp-s">英語</div></div>
+<div class="w"><b>nihongo</b><i>Japanese language</i><div class="jp-s">日本語</div></div>
+<div class="w"><b>keigo</b><i>polite language</i><div class="jp-s">敬語</div></div>
+</div>
+</section>
+
+<section id="diary">
+<h2>The voice diary</h2>
+<p class="lede"><em>Koe nikki</em>, a spoken diary. Six questions in order, every day. It runs you through past, present and future in one pass.</p>
+<div class="tscroll"><table>
+<thead><tr><th>#</th><th>Question</th><th>Answer with</th></tr></thead>
+<tbody>
+<tr><td class="k">1</td><td>Hizuke: what is today's date?</td><td class="g">Kyou wa ku-gatsu juu-hachi nichi desu.</td></tr>
+<tr><td class="k">2</td><td>Tenki: how is the weather?</td><td class="g">Kyou wa ame desu. / Kyou wa sukoshi atsui desu.</td></tr>
+<tr><td class="k">3</td><td>Kinou: what did you do yesterday?</td><td class="g">Kinou wa geemu o shimashita.</td></tr>
+<tr><td class="k">4</td><td>Kyou: what did you do today?</td><td class="g">Asa shichi-ji ni okimashita.</td></tr>
+<tr><td class="k">5</td><td>Kimochi: how do you feel?</td><td class="g">Kyou wa tanoshikatta desu.</td></tr>
+<tr><td class="k">6</td><td>Ashita: what will you do tomorrow?</td><td class="g">Ashita wa suupaa ni ikimasu.</td></tr>
+</tbody></table></div>
+<h3>Worked example</h3>
+<div class="lines">
+<div class="line"><div class="jp-r">Kyou wa ku-gatsu juu-hachi nichi desu.</div><div class="en">Today is September 18th.</div><div class="jp-s">きょうは くがつ じゅうはちにち です。</div></div>
+<div class="line"><div class="jp-r">Kyou wa ame desu.</div><div class="en">It's rainy today.</div><div class="jp-s">きょうは あめ です。</div></div>
+<div class="line"><div class="jp-r">Kinou wa geemu o shimashita.</div><div class="en">I played video games yesterday.</div><div class="jp-s">きのうは げーむを しました。</div></div>
+<div class="line"><div class="jp-r">Asa shichi-ji ni okimashita.</div><div class="en">I woke up at 7 in the morning.</div><div class="jp-s">あさ しちじに おきました。</div></div>
+<div class="line"><div class="jp-r">Hirugohan ni sandoicchi o tabemashita.</div><div class="en">I ate a sandwich for lunch.</div><div class="jp-s">ひるごはんに さんどいっちを たべました。</div></div>
+<div class="line"><div class="jp-r">Yoru nihongo o benkyou shimashita.</div><div class="en">I studied Japanese in the evening.</div><div class="jp-s">よる にほんごを べんきょうしました。</div></div>
+<div class="line"><div class="jp-r">Kyou wa tanoshikatta desu.</div><div class="en">Today was fun.</div><div class="jp-s">きょうは たのしかったです。</div></div>
+<div class="line"><div class="jp-r">Sukoshi tsukaremashita. Demo genki desu.</div><div class="en">I got a bit tired. But I feel good.</div><div class="jp-s">すこし つかれました。でも げんきです。</div></div>
+<div class="line"><div class="jp-r">Ashita wa suupaa ni ikimasu. Nihongo o benkyou shimasu.</div><div class="en">Tomorrow I'll go to the supermarket. I'll study Japanese.</div><div class="jp-s">あしたは スーパーに いきます。</div></div>
+</div>
+<div class="call"><b>Times of day</b>
+<p><code>Asa</code> morning (<code>gozen</code> is a.m.), <code>hiru</code> daytime,
+<code>yoru</code> evening. They go at the front: <code>Asa shichi-ji ni…</code></p></div>
+</section>
+
+<div id="none">Nothing matches that. Try a shorter word.</div>
+
+<footer><div class="wave-end"></div>
+<p>Compiled from 23 class notes, 2 December 2025 to 18 September 2026.
+Sentences marked <em>yours</em> are ones you built in class rather than teacher examples.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var body=document.body, root=document.documentElement;
+
+  /* script toggle */
+  var sb=document.getElementById('scriptBtn');
+  function setScript(on){
+    body.classList.toggle('script',on);
+    sb.setAttribute('aria-pressed',on?'true':'false');
+    try{localStorage.setItem('jp-script',on?'1':'0')}catch(e){}
+  }
+  try{ if(localStorage.getItem('jp-script')==='1') setScript(true); }catch(e){}
+  sb.addEventListener('click',function(){ setScript(!body.classList.contains('script')); });
+
+  /* theme toggle */
+  var tb=document.getElementById('themeBtn');
+  try{ var st=localStorage.getItem('jp-theme'); if(st) root.setAttribute('data-theme',st); }catch(e){}
+  tb.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){ cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; }
+    var next = cur==='dark' ? 'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('jp-theme',next)}catch(e){}
+  });
+
+  /* search */
+  var q=document.getElementById('q');
+  var units=[].slice.call(document.querySelectorAll('.line, .w, tbody tr'));
+  units.forEach(function(u){ u.dataset.t=(u.textContent||'').toLowerCase(); });
+  var secs=[].slice.call(document.querySelectorAll('section'));
+  secs.forEach(function(s){
+    var h=s.querySelector('h2');
+    s.dataset.t=((h?h.textContent:'')+' '+(s.querySelector('.lede')?s.querySelector('.lede').textContent:'')).toLowerCase();
+  });
+  function run(){
+    var v=q.value.trim().toLowerCase();
+    if(!v){
+      body.classList.remove('filtering','empty');
+      units.forEach(function(u){u.classList.remove('hit')});
+      secs.forEach(function(s){s.classList.remove('hit')});
+      return;
+    }
+    body.classList.add('filtering');
+    var any=false;
+    secs.forEach(function(s){
+      var local=[].slice.call(s.querySelectorAll('.line, .w, tbody tr'));
+      var n=0;
+      local.forEach(function(u){
+        var m=u.dataset.t.indexOf(v)>-1;
+        u.classList.toggle('hit',m); if(m)n++;
+      });
+      var titleMatch = s.dataset.t.indexOf(v)>-1;
+      if(titleMatch && n===0){ local.forEach(function(u){u.classList.add('hit')}); n=local.length; }
+      s.classList.toggle('hit', n>0);
+      if(n>0) any=true;
+    });
+    body.classList.toggle('empty',!any);
+  }
+  q.addEventListener('input',run);
+  q.addEventListener('keydown',function(e){ if(e.key==='Escape'){ q.value=''; run(); q.blur(); } });
+})();
+</script>
