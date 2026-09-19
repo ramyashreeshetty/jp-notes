@@ -16,10 +16,12 @@ Ingest new notes into the brain.
 6. Move each ingested file from `notes/inbox/` to `notes/YYYY-MM-DD-<slug>.md`,
    using the class date if the notes state one, otherwise today.
 7. Regenerate `STATUS.md`.
-8. Update `index.html` — add the new material to the right *topic* section,
-   not a new dated one. Then republish it to https://claude.ai/artifact/LrN9xnZ5KvASCDaVqyWhV9
-   (pass that as `url`) so the phone copy updates. Keep the same URL.
-9. Report: what was added, what was already known, and anything in the notes that
+8. Update `index.html`, adding the new material to the right *topic* section
+   rather than a new dated one.
+9. Publish both copies of the site, as described under "The textbook" in
+   `CLAUDE.md`: commit and push to `main` for GitHub Pages, and publish the
+   stripped copy to the artifact URL.
+10. Report: what was added, what was already known, and anything in the notes that
    was ambiguous or that you couldn't parse — ask about those rather than guessing.
 
 If the notes contradict something already in the brain, don't silently overwrite.

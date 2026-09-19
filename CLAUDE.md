@@ -105,13 +105,24 @@ distinction matters more than the score. Don't pad results with praise.
 
 ## The textbook
 
-`index.html` is every class note rearranged by topic instead of by date — the
-thing she actually reads. Published at https://claude.ai/artifact/LrN9xnZ5KvASCDaVqyWhV9,
-which is how she opens it on her phone.
+`index.html` is every class note rearranged by topic instead of by date, and is
+the thing she actually reads.
 
-Regenerate it whenever `/ingest` adds something, then republish to that same URL
-so the phone copy stays current. Never publish it as a new artifact; the link
-has to stay stable.
+It is served from two places, and both need updating after an `/ingest`:
+
+1. **GitHub Pages, the canonical one.** https://ramyashreeshetty.github.io/jp-notes/
+   Commit and push to `main` and the site rebuilds in a couple of minutes.
+2. **A Claude artifact mirror.** https://claude.ai/artifact/LrN9xnZ5KvASCDaVqyWhV9
+   Always pass that URL as `url` when publishing, so the link stays stable.
+
+The two need slightly different files. `index.html` is a complete document with
+its own doctype, charset and viewport, because Pages serves it raw. The artifact
+publisher supplies its own head, so publish a stripped copy to the artifact:
+take everything from `<title>` to just before `</head>`, then the contents of
+`<body>`, write that to a scratch file and publish that path with the URL above.
+
+Never drop the charset from `index.html`. Without it every kana and kanji on the
+page renders as mojibake.
 
 Conventions inside it:
 
@@ -141,7 +152,18 @@ These are corrections Ramya made directly. Hold to them.
 - Sections are numbered and separated by a rule. Keep the numbering matching the
   contents list.
 
-### Theme
+### The repository
+
+The folder is a git repo pushed to https://github.com/ramyashreeshetty/jp-notes,
+which is **public**. Ramya chose that knowingly, including the raw class notes
+and the personal details in the example sentences, so do not quietly strip them.
+
+Commits use a GitHub noreply address rather than her work email, since every
+commit is publicly visible. Pushing needs the `ramyashreeshetty` account:
+`gh auth switch --user ramyashreeshetty`, push, then switch back to
+`ramyashreeradix`, which is the account she normally works under.
+
+## Theme
 
 Set once, do not drift from it when regenerating.
 
