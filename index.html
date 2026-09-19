@@ -60,14 +60,23 @@ body{
   align-items:center;flex-wrap:wrap}
 .brand{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;font-size:1.02rem;
   letter-spacing:.01em;margin-right:auto;white-space:nowrap}
-.brand span{color:var(--ai);font-weight:500}
-#q{flex:1 1 160px;min-width:0;font:inherit;font-size:.9rem;padding:9px 13px;
+.brand .bj{color:var(--ai);font-weight:500}
+#q{flex:1 1 140px;min-width:0;max-width:220px;font:inherit;font-size:.9rem;padding:9px 13px;
   border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--sumi)}
 #q::placeholder{color:var(--sumi-3)}
 #q:focus{outline:2px solid var(--ai);outline-offset:-1px;border-color:transparent}
 .tog{font:inherit;font-size:.78rem;font-weight:500;letter-spacing:.03em;padding:9px 13px;
   border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--sumi-2);
-  cursor:pointer;white-space:nowrap}
+  cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;line-height:1.2}
+.tog:hover{border-color:var(--ai);color:var(--ai)}
+@media (max-width:720px){
+  .bar-in{gap:8px}
+  #q{order:10;flex:1 1 100%;max-width:none}
+  .tog{padding:8px 11px;font-size:.74rem}
+  /* the full name is right below in the masthead, so the bar keeps only the mark */
+  .brand .bn{display:none}
+  .brand{font-size:1.05rem}
+}
 .tog[aria-pressed="true"]{background:var(--ai);border-color:var(--ai);color:var(--on-ai)}
 .tog:focus-visible{outline:2px solid var(--ai);outline-offset:2px}
 
@@ -96,7 +105,7 @@ h1 em{display:block;font-style:normal;font-size:.36em;letter-spacing:.32em;
   color:var(--sumi-3);margin-top:4px}
 
 /* ---------- contents ---------- */
-nav.toc{padding-block:30px;border-top:1px solid var(--rule)}
+nav.toc{padding-block:30px;border-top:1px solid var(--rule);scroll-margin-top:76px}
 .toc-h{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;
   color:var(--sumi-3);margin-bottom:15px}
 .toc ol{list-style:none;margin:0;padding:0;display:grid;
@@ -206,8 +215,9 @@ footer{padding-block:0 70px;color:var(--sumi-3);font-size:.84rem;line-height:1.6
 </head>
 <body>
 <div class="bar"><div class="bar-in">
-  <div class="brand">Ramya no Nihongo <span>日本語</span></div>
+  <div class="brand"><span class="bn">Ramya no Nihongo</span> <span class="bj">日本語</span></div>
   <input id="q" type="search" placeholder="Search anything…" autocomplete="off">
+  <a class="tog" id="tocBtn" href="#contents">Contents</a>
   <button class="tog" id="scriptBtn" aria-pressed="false">あ Script</button>
   <button class="tog" id="themeBtn">Theme</button>
 </div></div>
@@ -227,7 +237,7 @@ footer{padding-block:0 70px;color:var(--sumi-3);font-size:.84rem;line-height:1.6
   </div>
 </header>
 
-<nav class="toc">
+<nav class="toc" id="contents">
   <div class="toc-h">Contents</div>
   <ol>
     <li><a href="#phrases">Everyday phrases</a></li>
@@ -1468,6 +1478,15 @@ Sentences marked <em>yours</em> are ones you built in class rather than teacher 
     });
     body.classList.toggle('empty',!any);
   }
+  var cb=document.getElementById('tocBtn');
+  cb.addEventListener('click',function(e){
+    e.preventDefault();
+    if(q.value){ q.value=''; run(); }
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('contents').scrollIntoView(
+      {behavior:reduce?'auto':'smooth',block:'start'});
+  });
+
   q.addEventListener('input',run);
   q.addEventListener('keydown',function(e){ if(e.key==='Escape'){ q.value=''; run(); q.blur(); } });
 })();
