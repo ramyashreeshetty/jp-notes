@@ -36,6 +36,31 @@ real baseline. Until then the numbers above measure exposure, not recall.
   chikatetsu, shinkansen, takushii, jitensha, aruite.
 - **Everyday food.** pan, tamago, sakana, yasai, kudamono.
 
+## Against N5
+
+The coverage numbers above measure progress through her teacher's materials, not
+through the exam. Against N5 itself, using the commonly cited estimates:
+
+| N5 asks for | Has |
+|---|---|
+| ~800 vocabulary | 231 |
+| ~100 kanji | 0 readable |
+| 92 kana | 0 readable |
+| ~80-130 grammar points | 40 recorded, about 34 of them N5 |
+
+Six of the 40 patterns are already N4: tame ni, nakute wa naranai, nakucha,
+nakutemo ii desu, temo ii desu, nazenara ... kara desu. Class is taught for
+conversation, so N4 grammar has arrived while some N5 foundations have not.
+
+**N5 basics never taught**, each checked against the class notes rather than
+assumed: the て form (the big one, and it carries te kudasai, te imasu, te mo ii,
+te kara), imasu for animate existence, ~たいです, ~ましょう, counters beyond
+-tsu and -ko, yori and no hou ga, ~くなかった, and position words.
+
+She cannot sit N5 today, and the reason is script rather than grammar: the paper
+is entirely in Japanese with no romaji anywhere. Kana is the cheapest item on the
+list and the one that unblocks everything else.
+
 ## Reading and writing
 
 Not started, deliberately. Kana and kanji are being recorded in `brain/` and in
