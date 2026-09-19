@@ -1,3 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ten months of Japanese class notes rearranged into one searchable textbook, in romaji with hiragana and kanji behind a toggle.">
 <title>Ramya no Nihongo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +38,10 @@
   --ai:#8fb0dc; --ai-soft:#1e2735; --on-ai:#15171b;
   --shu:#e0897a; --shu-soft:#2c1f1c;
 }
+html{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
 body{
   background-color:var(--washi);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
@@ -191,7 +201,8 @@ footer{padding-block:0 70px;color:var(--sumi-3);font-size:.84rem;line-height:1.6
   -webkit-mask-size:44px 22px;mask-size:44px 22px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-
+</head>
+<body>
 <div class="bar"><div class="bar-in">
   <div class="brand">Ramya no Nihongo <span>日本語</span></div>
   <input id="q" type="search" placeholder="Search anything…" autocomplete="off">
@@ -1235,3 +1246,5 @@ Sentences marked <em>yours</em> are ones you built in class rather than teacher 
   q.addEventListener('keydown',function(e){ if(e.key==='Escape'){ q.value=''; run(); q.blur(); } });
 })();
 </script>
+</body>
+</html>
