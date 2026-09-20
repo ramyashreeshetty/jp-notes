@@ -1,6 +1,6 @@
 # Status
 
-_Last updated: 2026-09-19 after ingesting the slide decks and the verb list_
+_Last updated: 2026-09-20 after correcting a voice diary draft_
 
 ## Where I'm at
 
@@ -13,19 +13,21 @@ _Last updated: 2026-09-19 after ingesting the slide decks and the verb list_
 | | Have | Total | Note |
 |---|---|---|---|
 | Slide-deck vocabulary | 78 | 131 | met in a class note at least once |
-| N5 verbs, practised | 8 | 55 | a sentence of my own exists |
-| N5 verbs, taught | 22 | 55 | covered in class, no sentence of my own |
+| N5 verbs, practised | 10 | 55 | a sentence of my own exists |
+| N5 verbs, taught | 20 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 25 | 55 | neither |
-| Grammar patterns | 40 | — | all recorded, none tested yet |
+| Grammar patterns | 41 | — | 3 at L1, 4 at L2, from a voice diary draft |
 
 ## Tested
 
-Nothing yet. Every item in `brain/` is at L0, so the first `/test` will set a
-real baseline. Until then the numbers above measure exposure, not recall.
+No `/test` run yet. Three drafts of a voice diary on 20 September produced the
+first real evidence. Five items reached L2 by being corrected and then used
+correctly: i-adjectives, wa, nakucha, nen/gatsu/nichi, hatsuka. Three sit at L1,
+wrong once and not yet re-used: destination ni, tame ni, hajimete no.
 
 ## Where the gaps are
 
-- **Verbs.** 22 verbs have been taught but never used in a sentence. These are
+- **Verbs.** 20 verbs have been taught but never used in a sentence. These are
   the cheapest thing to fix: the grammar is already there, only the verb is new.
 - **Days of the month.** tsuitachi, futsuka, yokka, muika, nanoka, youka,
   kokonoka and the rest are in the lesson 5 deck but have not come up in class.

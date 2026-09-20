@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Koe nikki: a spoken Japanese diary, one entry a day, in romaji with the English and the kana behind a toggle.">
+<title>Koe Nikki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Palette from the traditional Japanese colours: kinari (undyed cloth),
+   sumi (ink), ai (indigo), shu (vermilion seal). */
+:root{
+  --washi:#f4f1e8; --surface:#fcfaf5; --sunk:#ece7da;
+  --sumi:#1f1c17; --sumi-2:#55504a; --sumi-3:#7a736a;
+  --rule:#ddd6c6; --rule-2:#e9e3d6;
+  --ai:#23406e; --ai-soft:#e3e9f2; --on-ai:#fcfaf5;
+  --shu:#a8342a; --shu-soft:#f7e8e3;
+  --mine-bg:#faf5f1; --mine-edge:rgba(168,52,42,.32);
+  --wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.4'%3E%3Cpath d='M-22 22a22 22 0 0 1 44 0M22 22a22 22 0 0 1 44 0'/%3E%3Cpath d='M-22 22a15 15 0 0 1 30 0M22 22a15 15 0 0 1 30 0'/%3E%3Cpath d='M-22 22a8 8 0 0 1 16 0M22 22a8 8 0 0 1 16 0'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --washi:#15171b; --surface:#1d2026; --sunk:#191c21;
+    --sumi:#e9e4d9; --sumi-2:#b3ada2; --sumi-3:#8a8479;
+    --rule:#2e323a; --rule-2:#262a31;
+    --ai:#8fb0dc; --ai-soft:#1e2735; --on-ai:#15171b;
+    --shu:#e0897a; --shu-soft:#2c1f1c;
+    --mine-bg:#201e1d; --mine-edge:rgba(224,137,122,.30);
+  }
+}
+:root[data-theme="dark"]{
+  --washi:#15171b; --surface:#1d2026; --sunk:#191c21;
+  --sumi:#e9e4d9; --sumi-2:#b3ada2; --sumi-3:#8a8479;
+  --rule:#2e323a; --rule-2:#262a31;
+  --ai:#8fb0dc; --ai-soft:#1e2735; --on-ai:#15171b;
+  --shu:#e0897a; --shu-soft:#2c1f1c;
+}
+html{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+body{
+  background-color:var(--washi);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  color:var(--sumi);
+  font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.62;margin:0;-webkit-text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:790px;margin:0 auto;padding-inline:22px}
+.mincho{font-family:"Shippori Mincho",Georgia,"Yu Mincho",serif}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:color-mix(in srgb,var(--washi) 92%,transparent);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.bar-in{max-width:790px;margin:0 auto;padding:11px 22px;display:flex;gap:10px;
+  align-items:center;flex-wrap:wrap}
+.brand{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;font-size:1.02rem;
+  letter-spacing:.01em;margin-right:auto;white-space:nowrap}
+.brand .bj{color:var(--ai);font-weight:500}
+#q{flex:1 1 140px;min-width:0;max-width:220px;font:inherit;font-size:.9rem;padding:9px 13px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--sumi)}
+#q::placeholder{color:var(--sumi-3)}
+#q:focus{outline:2px solid var(--ai);outline-offset:-1px;border-color:transparent}
+.tog{font:inherit;font-size:.78rem;font-weight:500;letter-spacing:.03em;padding:9px 13px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--surface);color:var(--sumi-2);
+  cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;line-height:1.2}
+.tog:hover{border-color:var(--ai);color:var(--ai)}
+@media (max-width:720px){
+  .bar-in{gap:8px}
+  #q{order:10;flex:1 1 100%;max-width:none}
+  .tog{padding:8px 11px;font-size:.74rem}
+  /* the full name is right below in the masthead, so the bar keeps only the mark */
+  .brand .bn{display:none}
+  .brand{font-size:1.05rem}
+}
+.tog[aria-pressed="true"]{background:var(--ai);border-color:var(--ai);color:var(--on-ai)}
+.tog:focus-visible{outline:2px solid var(--ai);outline-offset:2px}
+
+/* ---------- masthead ---------- */
+header.mast{padding-block:54px 34px}
+h1{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;
+  font-size:clamp(2.1rem,7vw,3.1rem);line-height:1.18;letter-spacing:.005em;
+  margin:0 0 22px;text-wrap:balance}
+h1 em{display:block;font-style:normal;font-size:.36em;letter-spacing:.32em;
+  color:var(--ai);font-weight:500;margin-bottom:12px}
+.mast-top{display:flex;gap:26px;align-items:flex-start;justify-content:space-between}
+.mast-top h1{flex:1 1 auto}
+/* hanko: the vermilion seal stamped on a finished page */
+.seal{flex:none;width:58px;height:58px;margin-top:14px;background:var(--shu);
+  color:var(--on-ai);display:flex;align-items:center;justify-content:center;
+  font-family:"Shippori Mincho",Georgia,serif;font-size:1.95rem;font-weight:500;
+  line-height:1;border-radius:2px;transform:rotate(-4deg);
+  box-shadow:0 1px 3px rgba(31,28,23,.16)}
+@media (max-width:420px){.seal{width:46px;height:46px;font-size:1.5rem;margin-top:8px}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px;background:var(--rule-2);border:1px solid var(--rule);overflow:hidden}
+.fact{background:var(--surface);padding:14px 16px}
+.fact b{display:block;font-family:"Shippori Mincho",Georgia,serif;font-size:1.5rem;
+  font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.fact span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--sumi-3);margin-top:4px}
+
+/* ---------- contents ---------- */
+nav.toc{padding-block:30px;border-top:1px solid var(--rule);scroll-margin-top:76px}
+.toc-h{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;
+  color:var(--sumi-3);margin-bottom:15px}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px 26px;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:flex;gap:11px;align-items:baseline;padding:6px 0;color:var(--sumi);
+  text-decoration:none;font-size:.93rem;border-bottom:1px solid transparent}
+.toc a:hover{color:var(--ai);border-bottom-color:var(--rule)}
+.toc a::before{content:counter(t,decimal-leading-zero);
+  font-family:"Shippori Mincho",Georgia,serif;font-size:.76rem;color:var(--ai);
+  font-variant-numeric:tabular-nums;flex:none;opacity:.75}
+
+/* ---------- sections ---------- */
+.wrap{counter-reset:sec}
+section{padding-block:0 66px;scroll-margin-top:72px;counter-increment:sec}
+/* seigaiha: the overlapping-wave pattern, as a divider band */
+section::before{content:"";display:block;height:22px;margin-block:58px;
+  background-color:var(--rule);opacity:.85;
+  -webkit-mask-image:var(--wave);mask-image:var(--wave);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:44px 22px;mask-size:44px 22px}
+h2{font-family:"Shippori Mincho",Georgia,serif;font-weight:600;font-size:1.72rem;
+  letter-spacing:.005em;line-height:1.3;margin:0 0 7px;text-wrap:balance}
+/* the section number as a hanko, in kanji numerals */
+h2::before{content:counter(sec,cjk-ideographic);
+  display:flex;align-items:center;justify-content:center;
+  width:2.5em;height:2.5em;margin-bottom:16px;
+  border:1px solid var(--ai);color:var(--ai);
+  font-family:"Shippori Mincho",Georgia,serif;font-size:.92rem;
+  font-weight:500;line-height:1}
+.lede{color:var(--sumi-2);font-size:.95rem;margin:0 0 26px;max-width:60ch}
+h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--sumi-3);
+  font-weight:700;margin:34px 0 13px}
+h3:first-of-type{margin-top:0}
+
+/* ---------- the core object: a line ---------- */
+.lines{display:flex;flex-direction:column;gap:1px;background:var(--rule-2);
+  border:1px solid var(--rule-2);overflow:hidden}
+.line{background:var(--surface);padding:13px 16px;display:grid;gap:4px}
+.jp-r{font-weight:500;font-size:1.05rem;line-height:1.48;letter-spacing:.004em;
+  overflow-wrap:break-word}
+.en{color:var(--sumi-2);font-size:.875rem;line-height:1.5}
+.jp-s{font-family:"Shippori Mincho",Georgia,"Yu Mincho",serif;font-size:1.02rem;
+  color:var(--ai);line-height:1.6;letter-spacing:.02em}
+.note{font-size:.8rem;color:var(--sumi-3);font-style:italic}
+.line.mine{background:var(--mine-bg);box-shadow:inset 2px 0 0 var(--mine-edge)}
+.line.mine .jp-r::after{content:"yours";float:right;font-size:.62rem;font-style:italic;
+  font-weight:400;letter-spacing:.04em;color:var(--sumi-3);
+  margin-left:12px;margin-top:5px}
+
+/* ---------- word grid ---------- */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);overflow:hidden}
+.w{background:var(--surface);padding:11px 14px}
+.w b{display:block;font-weight:500;font-size:.97rem;line-height:1.4}
+.w i{display:block;font-style:normal;color:var(--sumi-2);font-size:.81rem;line-height:1.45}
+.w .jp-s{font-size:.9rem;margin-top:2px}
+
+/* ---------- table ---------- */
+.meter{height:7px;background:var(--sunk);position:relative;min-width:80px}
+.meter span{position:absolute;inset:0 auto 0 0;background:var(--ai);display:block}
+.tscroll{overflow-x:auto;border:1px solid var(--rule-2);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:min(100%,420px)}
+th{text-align:left;font-size:.67rem;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--sumi-3);font-weight:700;padding:11px 15px;
+  border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:11px 15px;border-bottom:1px solid var(--rule-2);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:0}
+td.k{font-weight:500}
+td.g{color:var(--sumi-2)}
+
+/* ---------- callout ---------- */
+.call{background:var(--ai-soft);padding:17px 19px;margin:24px 0;font-size:.91rem;
+  border-left:2px solid var(--ai);line-height:1.6}
+.call b{display:block;font-family:"Shippori Mincho",Georgia,serif;font-size:.95rem;
+  font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ai);margin-bottom:7px}
+.call p{margin:0 0 9px}.call p:last-child{margin-bottom:0}
+.call.warn{background:var(--shu-soft);border-left-color:var(--shu)}
+.call.warn b{color:var(--shu)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:var(--sunk);padding:2px 6px;border-radius:2px}
+
+/* ---------- script toggle ---------- */
+.jp-s{display:none}
+body.script .jp-s{display:block}
+.script-only{display:none}
+body.script .script-only{display:revert}
+
+/* ---------- search ---------- */
+body.filtering section{display:none}
+body.filtering section.hit{display:block}
+body.filtering .line:not(.hit),body.filtering .w:not(.hit),
+body.filtering tbody tr:not(.hit){display:none}
+body.filtering nav.toc,body.filtering header.mast,body.filtering .call{display:none}
+#none{display:none;padding-block:56px;color:var(--sumi-3);text-align:center;font-size:.95rem}
+body.filtering.empty #none{display:block}
+
+footer{padding-block:0 70px;color:var(--sumi-3);font-size:.84rem;line-height:1.6}
+.wave-end{height:22px;margin-block:0 34px;background-color:var(--rule);opacity:.85;
+  -webkit-mask-image:var(--wave);mask-image:var(--wave);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:44px 22px;mask-size:44px 22px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+/* ---------- diary ---------- */
+.entry-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 24px;
+  font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;color:var(--sumi-3)}
+.entry-meta b{font-weight:700;color:var(--sumi-2);letter-spacing:.06em}
+h2 .date-jp{display:block;font-size:.46em;letter-spacing:.14em;color:var(--ai);
+  font-weight:500;margin-top:7px}
+.toc a .d{color:var(--sumi-3);font-size:.82rem;margin-left:auto;padding-left:14px}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in">
+  <div class="brand"><span class="bn">Koe Nikki</span> <span class="bj">声日記</span></div>
+  <a class="tog" href="index.html">Textbook</a>
+  <button class="tog" id="scriptBtn" aria-pressed="false">あ Script</button>
+  <button class="tog" id="themeBtn">Theme</button>
+</div></div>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="mast-top">
+    <h1><em>声日記</em>Koe Nikki</h1>
+    <div class="seal" aria-hidden="true">学</div>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>1</b><span>entries</span></div>
+    <div class="fact"><b>13</b><span>sentences</span></div>
+    <div class="fact"><b>10</b><span>fixes</span></div>
+  </div>
+</header>
+
+<nav class="toc" id="contents">
+  <div class="toc-h">Entries</div>
+  <ol>
+    <li><a href="#d20260920">20 September 2026<span class="d">Sunday</span></a></li>
+  </ol>
+</nav>
+
+<section id="d20260920">
+<h2>20 September 2026<span class="date-jp">九月二十日 日曜日</span></h2>
+<p class="lede">Dates, weather, doko ni mo with a negative, tame ni for purpose, nakute wa narimasen.</p>
+
+<h3>The entry</h3>
+<div class="lines">
+<div class="line mine"><div class="jp-r">Ayano-sensei, konnichiwa.</div><div class="en">Hello, Ayano-sensei.</div><div class="jp-s">あやの先生、こんにちは。</div></div>
+<div class="line mine"><div class="jp-r">Kore wa hajimete no nikki desu.</div><div class="en">This is my first diary.</div><div class="jp-s">これは はじめての 日記です。</div></div>
+<div class="line mine"><div class="jp-r">Kyou wa kugatsu hatsuka, nichiyoubi desu.</div><div class="en">Today is Sunday, 20 September.</div><div class="jp-s">きょうは 九月二十日、日曜日です。</div></div>
+<div class="line mine"><div class="jp-r">Soshite, ame desu.</div><div class="en">And it is raining.</div><div class="jp-s">そして、雨です。</div></div>
+<div class="line mine"><div class="jp-r">Kyou wa doko ni mo ikimasen.</div><div class="en">Today I am not going anywhere.</div><div class="jp-s">きょうは どこにも 行きません。</div></div>
+<div class="line mine"><div class="jp-r">Demo kinou wa Resident Evil no eiga o miru tame ni eigakan ni ikimashita.</div><div class="en">But yesterday I went to the cinema to watch the Resident Evil film.</div><div class="jp-s">でも きのうは レジデント・イービルの 映画を 見るために 映画館に 行きました。</div></div>
+<div class="line mine"><div class="jp-r">Sorekara, nihongo o benkyou shimashita.</div><div class="en">After that, I studied Japanese.</div><div class="jp-s">それから、日本語を 勉強しました。</div></div>
+<div class="line mine"><div class="jp-r">Nihongo de hanasu koto wa hazukashii desu.</div><div class="en">Speaking in Japanese makes me shy.</div><div class="jp-s">日本語で 話すことは はずかしいです。</div></div>
+<div class="line mine"><div class="jp-r">Nihongo wa muzukashii desu ne.</div><div class="en">Japanese is difficult, isn't it.</div><div class="jp-s">日本語は むずかしいですね。</div></div>
+<div class="line mine"><div class="jp-r">Demo hanasanakute wa narimasen.</div><div class="en">But I have to speak it.</div><div class="jp-s">でも 話さなくては なりません。</div></div>
+<div class="line mine"><div class="jp-r">Ashita wa nihongo no kurasu ga arimasu.</div><div class="en">Tomorrow I have Japanese class.</div><div class="jp-s">あしたは 日本語の クラスが あります。</div></div>
+<div class="line mine"><div class="jp-r">Kurasu de aimasu ne.</div><div class="en">I will see you in class.</div><div class="jp-s">クラスで 会いますね。</div></div>
+<div class="line mine"><div class="jp-r">Arigatou gozaimasu. Mata ashita.</div><div class="en">Thank you. See you tomorrow.</div><div class="jp-s">ありがとうございます。また あした。</div></div>
+</div>
+
+<h3>Corrected before recording</h3>
+<div class="tscroll"><table>
+<thead><tr><th>Said</th><th>Correct</th><th>Rule</th></tr></thead>
+<tbody>
+<tr><td class="k">hazukashi, muzukashi</td><td class="k">hazukashii, muzukashii</td><td class="g">The doubled vowel belongs to the word. i-adjectives end in it: oishii, tanoshii, muzukashii.</td></tr>
+<tr><td class="k">hanasu kucha na kucha</td><td class="k">hanasanakute wa narimasen</td><td class="g">Built on the nai form, never the dictionary form. hanasu to hanasanai to hanasanakute.</td></tr>
+<tr><td class="k">watashi wa nihongo de hanasu koto wa</td><td class="k">nihongo de hanasu koto wa</td><td class="g">One wa to a sentence. Once koto wa is the topic, watashi wa has no work left.</td></tr>
+<tr><td class="k">tokoro ni ikimasen</td><td class="k">doko ni mo ikimasen</td><td class="g">Not anywhere is doko ni mo with a negative verb, the same shape as nani mo and dare mo.</td></tr>
+<tr><td class="k">shichigatsu</td><td class="k">kugatsu</td><td class="g">September is the ninth month. shichigatsu is July.</td></tr>
+<tr><td class="k">nijuu nichi</td><td class="k">hatsuka</td><td class="g">The 20th is irregular, as are the 1st to the 10th, the 14th and the 24th.</td></tr>
+<tr><td class="k">hajimete koe nikki</td><td class="k">hajimete no nikki</td><td class="g">hajimete takes no in front of a noun. Bare hajimete goes in front of a verb.</td></tr>
+<tr><td class="k">eigakan o ikimashita</td><td class="k">eigakan ni ikimashita</td><td class="g">A destination takes ni or e. o marks an object, and a cinema is not one.</td></tr>
+<tr><td class="k">miru tame ni o ikimashita</td><td class="k">miru tame ni ikimashita</td><td class="g">Nothing follows tame ni. The main verb comes straight after it.</td></tr>
+<tr><td class="k">kurasu ni aimasu</td><td class="k">kurasu de aimasu</td><td class="g">ni marks the person met. The place the meeting happens in takes de.</td></tr>
+</tbody></table></div>
+
+<div class="call"><b>hajimete and hajimete no</b>
+<p>In front of a verb it stands alone: <code>hajimete mimashita</code>, I saw it for the first time.
+In front of a noun it takes <code>no</code>: <code>hajimete no nikki</code>, my first diary.</p></div>
+
+<h3>New words</h3>
+<div class="words">
+<div class="w"><b>nikki</b><i>diary</i><div class="jp-s">日記</div></div>
+<div class="w"><b>eiga</b><i>film</i><div class="jp-s">映画</div></div>
+<div class="w"><b>eigakan</b><i>cinema</i><div class="jp-s">映画館</div></div>
+<div class="w"><b>ame</b><i>rain</i><div class="jp-s">雨</div></div>
+<div class="w"><b>hatsuka</b><i>the 20th of the month</i><div class="jp-s">二十日</div></div>
+<div class="w"><b>soshite</b><i>and, and then</i><div class="jp-s">そして</div></div>
+<div class="w"><b>sorekara</b><i>after that</i><div class="jp-s">それから</div></div>
+<div class="w"><b>doko ni mo</b><i>not anywhere</i><div class="jp-s">どこにも</div></div>
+</div>
+</section>
+
+<footer><div class="wave-end"></div>
+<p>One entry a day, romaji first. Every sentence here is yours.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var body=document.body, root=document.documentElement;
+  var sb=document.getElementById('scriptBtn');
+  function setScript(on){
+    body.classList.toggle('script',on);
+    sb.setAttribute('aria-pressed',on?'true':'false');
+    try{localStorage.setItem('jp-script',on?'1':'0')}catch(e){}
+  }
+  try{ if(localStorage.getItem('jp-script')==='1') setScript(true); }catch(e){}
+  sb.addEventListener('click',function(){ setScript(!body.classList.contains('script')); });
+
+  var tb=document.getElementById('themeBtn');
+  try{ var st=localStorage.getItem('jp-theme'); if(st) root.setAttribute('data-theme',st); }catch(e){}
+  tb.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){ cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; }
+    var next = cur==='dark' ? 'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('jp-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

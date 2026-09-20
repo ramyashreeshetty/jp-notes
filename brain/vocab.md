@@ -64,7 +64,7 @@ been taught is still at L0 and should not be tested until it has.
 | kokonoka | | L5 Time | not yet | L0 | |
 | tooka | | L5 Time | yes | L0 | |
 | juuyokka | | L5 Time | not yet | L0 | |
-| hatsuka | | L5 Time | yes | L0 | |
+| hatsuka | the 20th of the month, not nijuu nichi | L5 Time | yes | L2 | 2026-09-20 |
 | nijuuyokka | | L5 Time | not yet | L0 | |
 | nichi | | L5 Time | yes | L0 | |
 | nan nichi | | L5 Time | yes | L0 | |
@@ -139,3 +139,12 @@ been taught is still at L0 and should not be tested until it has.
 | ikimasu | | Places and transport | yes | L0 | |
 | kimasu | | Places and transport | yes | L0 | |
 | kaerimasu | | Places and transport | yes | L0 | |
+| hazukashii | embarrassed, shy | Conversational | yes | L0 | |
+| soshite | and then, joining two sentences | Conversational | yes | L0 | |
+| ame | rain | Conversational | yes | L0 | |
+| tenki | weather | Conversational | yes | L0 | |
+| kurasu | class | Conversational | yes | L0 | |
+| eiga | film | Conversational | yes | L0 | |
+| eigakan | cinema | Conversational | yes | L0 | |
+| nikki | diary | Conversational | yes | L0 | |
+| onsei nikki | voice diary, audio diary | Conversational | yes | L0 | |

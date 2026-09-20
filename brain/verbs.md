@@ -6,17 +6,17 @@ The 55 N5 verbs from `notes/reference/n5-verb-list.xlsx`, in three tiers.
 - **Taught** — the verb appears in a class note, but she has not built a sentence with it
 - **Untouched** — neither
 
-Counts as of 19 September 2026: 8 practised, 22 taught, 25 untouched.
+Counts as of 20 September 2026: 10 practised, 20 taught, 25 untouched.
 
 ## Practised
 
-hanasu, iku, iu, kau, miru, taberu, tomaru, yameru
+au, benkyou suru, hanasu, iku, iu, kau, miru, taberu, tomaru, yameru
 
 ## Taught, no sentence of her own yet
 
 These are the cheapest wins. The grammar is already there; only the verb is new.
 
-aruku, au, benkyou suru, deru, hairu, hajimeru, hashiru, kaeru, kaku, kiku, kuru, neru, nomu, okiru, oyogu, ryouri suru, souji suru, suwaru, tatsu, toru, yasumu, yomu
+aruku, deru, hairu, hajimeru, hashiru, kaeru, kaku, kiku, kuru, neru, nomu, okiru, oyogu, ryouri suru, souji suru, suwaru, tatsu, toru, yasumu, yomu
 
 ## Untouched
 
