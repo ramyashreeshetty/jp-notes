@@ -220,6 +220,34 @@ footer{padding-block:0 70px;color:var(--sumi-3);font-size:.84rem;line-height:1.6
 h2 .date-jp{display:block;font-size:.46em;letter-spacing:.14em;color:var(--ai);
   font-weight:500;margin-top:7px}
 .toc a .d{color:var(--sumi-3);font-size:.82rem;margin-left:auto;padding-left:14px}
+.cal{max-width:330px}
+.cal-h{display:flex;align-items:center;gap:7px;margin-bottom:13px}
+.cal-m{font-size:1.06rem;font-weight:600;margin-right:auto;letter-spacing:.01em}
+.cal-nav{font:inherit;font-size:.95rem;line-height:1;width:30px;height:30px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--surface);
+  color:var(--sumi-2);cursor:pointer}
+.cal-nav:hover:not(:disabled){border-color:var(--ai);color:var(--ai)}
+.cal-nav:disabled{opacity:.35;cursor:default}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;margin-bottom:5px}
+.cal-dow span{text-align:center;font-size:.62rem;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--sumi-3);padding-bottom:3px}
+.cal-dow .jp-s{font-size:.82rem;letter-spacing:0;padding:0}
+body.script .cal-dow .rom{display:none}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;
+  background:var(--rule-2);border:1px solid var(--rule-2)}
+.cal-grid>*{background:var(--surface);aspect-ratio:1;display:flex;
+  align-items:center;justify-content:center;font-size:.86rem;
+  font-family:"Shippori Mincho",Georgia,serif;font-variant-numeric:tabular-nums;
+  color:var(--sumi-3);border:0;padding:0}
+.cal-grid .pad{background:var(--sunk)}
+.cal-grid button{cursor:pointer;color:var(--ai);font-weight:600;
+  box-shadow:inset 0 0 0 1px var(--ai);font-size:.95rem}
+.cal-grid button:hover{background:var(--ai-soft)}
+.cal-grid button[aria-pressed="true"]{background:var(--ai);color:var(--on-ai)}
+.cal-all{margin-top:13px;font:inherit;font-size:.78rem;padding:8px 12px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--surface);
+  color:var(--sumi-2);cursor:pointer}
+.cal-all:hover{border-color:var(--ai);color:var(--ai)}
 .entry-body{background:var(--mine-bg);border:1px solid var(--rule-2);
   box-shadow:inset 2px 0 0 var(--mine-edge);padding:20px 22px;display:grid;gap:18px}
 .entry-body .jp-r{font-size:1.08rem;line-height:1.8}
@@ -246,18 +274,25 @@ h2 .date-jp{display:block;font-size:.46em;letter-spacing:.14em;color:var(--ai);
   <div class="facts">
     <div class="fact"><b>1</b><span>entries</span></div>
     <div class="fact"><b>13</b><span>sentences</span></div>
-    <div class="fact"><b>10</b><span>fixes</span></div>
+    <div class="fact"><b>8</b><span>new words</span></div>
   </div>
 </header>
 
-<nav class="toc" id="contents">
+<nav class="cal-wrap" id="contents" hidden>
   <div class="toc-h">Entries</div>
-  <ol>
-    <li><a href="#d20260920">20 September 2026<span class="d">Sunday</span></a></li>
-  </ol>
+  <div class="cal">
+    <div class="cal-h">
+      <div class="cal-m mincho" id="calMonth"></div>
+      <button class="cal-nav" id="calPrev" type="button" aria-label="Previous month">&lsaquo;</button>
+      <button class="cal-nav" id="calNext" type="button" aria-label="Next month">&rsaquo;</button>
+    </div>
+    <div class="cal-dow" id="calDow"></div>
+    <div class="cal-grid" id="calGrid"></div>
+    <button class="cal-all" id="calAll" type="button" hidden>Show every entry</button>
+  </div>
 </nav>
 
-<section id="d20260920">
+<section id="d20260920" data-date="2026-09-20">
 <h2>20 September 2026<span class="date-jp">九月二十日 日曜日</span></h2>
 <p class="lede">Dates, weather, doko ni mo with a negative, tame ni for purpose, nakute wa narimasen.</p>
 
@@ -266,26 +301,6 @@ h2 .date-jp{display:block;font-size:.46em;letter-spacing:.14em;color:var(--ai);
 <div class="jp-s">あやの先生、こんにちは。これは はじめての 日記です。<br>きょうは 九月二十日、日曜日です。そして、雨です。<br>きょうは どこにも 行きません。でも きのうは レジデント・イービルの 映画を 見るために 映画館に 行きました。それから、日本語を 勉強しました。<br>日本語で 話すことは はずかしいです。日本語は むずかしいですね。でも 話さなくては なりません。<br>あしたは 日本語の クラスが あります。クラスで 会いますね。<br>ありがとうございます。また あした。</div>
 <div class="en">Hello, Ayano-sensei. This is my first diary.<br>Today is Sunday, 20 September. And it is raining.<br>Today I am not going anywhere. But yesterday I went to the cinema to watch the Resident Evil film. After that, I studied Japanese.<br>Speaking in Japanese makes me shy. Japanese is difficult, isn't it. But I have to speak it.<br>Tomorrow I have Japanese class. I will see you in class.<br>Thank you. See you tomorrow.</div>
 </div>
-
-<h3>Corrected before recording</h3>
-<div class="tscroll"><table>
-<thead><tr><th>Said</th><th>Correct</th><th>Rule</th></tr></thead>
-<tbody>
-<tr><td class="k">hazukashi, muzukashi</td><td class="k">hazukashii, muzukashii</td><td class="g">The doubled vowel belongs to the word. i-adjectives end in it: oishii, tanoshii, muzukashii.</td></tr>
-<tr><td class="k">hanasu kucha na kucha</td><td class="k">hanasanakute wa narimasen</td><td class="g">Built on the nai form, never the dictionary form. hanasu to hanasanai to hanasanakute.</td></tr>
-<tr><td class="k">watashi wa nihongo de hanasu koto wa</td><td class="k">nihongo de hanasu koto wa</td><td class="g">One wa to a sentence. Once koto wa is the topic, watashi wa has no work left.</td></tr>
-<tr><td class="k">tokoro ni ikimasen</td><td class="k">doko ni mo ikimasen</td><td class="g">Not anywhere is doko ni mo with a negative verb, the same shape as nani mo and dare mo.</td></tr>
-<tr><td class="k">shichigatsu</td><td class="k">kugatsu</td><td class="g">September is the ninth month. shichigatsu is July.</td></tr>
-<tr><td class="k">nijuu nichi</td><td class="k">hatsuka</td><td class="g">The 20th is irregular, as are the 1st to the 10th, the 14th and the 24th.</td></tr>
-<tr><td class="k">hajimete koe nikki</td><td class="k">hajimete no nikki</td><td class="g">hajimete takes no in front of a noun. Bare hajimete goes in front of a verb.</td></tr>
-<tr><td class="k">eigakan o ikimashita</td><td class="k">eigakan ni ikimashita</td><td class="g">A destination takes ni or e. o marks an object, and a cinema is not one.</td></tr>
-<tr><td class="k">miru tame ni o ikimashita</td><td class="k">miru tame ni ikimashita</td><td class="g">Nothing follows tame ni. The main verb comes straight after it.</td></tr>
-<tr><td class="k">kurasu ni aimasu</td><td class="k">kurasu de aimasu</td><td class="g">ni marks the person met. The place the meeting happens in takes de.</td></tr>
-</tbody></table></div>
-
-<div class="call"><b>hajimete and hajimete no</b>
-<p>In front of a verb it stands alone: <code>hajimete mimashita</code>, I saw it for the first time.
-In front of a noun it takes <code>no</code>: <code>hajimete no nikki</code>, my first diary.</p></div>
 
 <h3>New words</h3>
 <div class="words">
@@ -326,6 +341,79 @@ In front of a noun it takes <code>no</code>: <code>hajimete no nikki</code>, my 
     root.setAttribute('data-theme',next);
     try{localStorage.setItem('jp-theme',next)}catch(e){}
   });
+
+  /* calendar */
+  var secs=[].slice.call(document.querySelectorAll('section[data-date]'));
+  if(secs.length){
+    var wrap=document.getElementById('contents');
+    var byDate={}; secs.forEach(function(x){ byDate[x.dataset.date]=x; });
+    var all=Object.keys(byDate).sort();
+    var first=all[0], last=all[all.length-1];
+    var view={y:+last.slice(0,4), m:+last.slice(5,7)-1};
+    var months=["January","February","March","April","May","June","July",
+      "August","September","October","November","December"];
+    var dow=[["S","\u65e5"],["M","\u6708"],["T","\u706b"],["W","\u6c34"],
+      ["T","\u6728"],["F","\u91d1"],["S","\u571f"]];
+    var grid=document.getElementById('calGrid');
+    var dowEl=document.getElementById('calDow');
+    var label=document.getElementById('calMonth');
+    var prev=document.getElementById('calPrev'), next=document.getElementById('calNext');
+    var allBtn=document.getElementById('calAll');
+    dowEl.innerHTML=dow.map(function(d){
+      return '<span><span class="rom">'+d[0]+'</span>'+
+             '<span class="jp-s script-only">'+d[1]+'</span></span>'; }).join('');
+    function key(y,m,d){
+      return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    }
+    function pick(date){
+      secs.forEach(function(x){ x.hidden = x.dataset.date!==date; });
+      allBtn.hidden=false;
+      [].forEach.call(grid.querySelectorAll('button'),function(b){
+        b.setAttribute('aria-pressed', b.dataset.d===date ? 'true':'false');
+      });
+      var t=byDate[date];
+      if(t) t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    }
+    function showAll(){
+      secs.forEach(function(x){ x.hidden=false; });
+      allBtn.hidden=true;
+      [].forEach.call(grid.querySelectorAll('button'),function(b){
+        b.setAttribute('aria-pressed','false');
+      });
+    }
+    function draw(){
+      label.textContent=months[view.m]+' '+view.y;
+      var start=new Date(view.y,view.m,1).getDay();
+      var days=new Date(view.y,view.m+1,0).getDate();
+      var html='';
+      for(var i=0;i<start;i++) html+='<div class="pad"></div>';
+      for(var d=1;d<=days;d++){
+        var k=key(view.y,view.m,d);
+        html += byDate[k]
+          ? '<button type="button" data-d="'+k+'" aria-pressed="false">'+d+'</button>'
+          : '<div>'+d+'</div>';
+      }
+      var tail=(7-((start+days)%7))%7;
+      for(var t=0;t<tail;t++) html+='<div class="pad"></div>';
+      grid.innerHTML=html;
+      var cm=view.y*12+view.m;
+      prev.disabled = cm <= (+first.slice(0,4))*12 + (+first.slice(5,7)-1);
+      next.disabled = cm >= (+last.slice(0,4))*12 + (+last.slice(5,7)-1);
+    }
+    grid.addEventListener('click',function(e){
+      var b=e.target.closest('button[data-d]');
+      if(b) pick(b.dataset.d);
+    });
+    prev.addEventListener('click',function(){
+      if(--view.m<0){view.m=11;view.y--;} draw();
+    });
+    next.addEventListener('click',function(){
+      if(++view.m>11){view.m=0;view.y++;} draw();
+    });
+    allBtn.addEventListener('click',showAll);
+    draw();
+    wrap.hidden=false;
+  }
 })();
 </script>
 </body>
