@@ -103,12 +103,24 @@ Be a real teacher, not a cheerleader. If an answer is wrong, say it's wrong and
 explain why. If an answer is technically correct but unnatural, say so — that
 distinction matters more than the score. Don't pad results with praise.
 
-## The textbook
+## The site
 
-`index.html` is every class note rearranged by topic instead of by date, and is
-the thing she actually reads.
+Two pages, both hers to read:
 
-It is served from two places, and both need updating after an `/ingest`:
+- `index.html` is every class note rearranged by topic instead of by date.
+- `diary.html` is the koe nikki: one entry a day, newest month on a calendar.
+
+### Every change ships, every time
+
+**No change to either page is finished until it is live on the web.** This is not
+an `/ingest` step; it applies to every edit, however small, and to both pages.
+The sequence is always: edit, commit, push, publish the artifact, then *verify
+the live URL with `curl` before saying it is done*. GitHub Pages takes a minute
+or two to rebuild, so poll until the change actually appears rather than
+assuming the push was enough. Never report a change as live on the strength of
+a successful push.
+
+It is served from two places, and both need updating:
 
 1. **GitHub Pages, the canonical one.** https://ramyashreeshetty.github.io/jp-notes/
    Commit and push to `main` and the site rebuilds in a couple of minutes.
@@ -121,10 +133,29 @@ publisher supplies its own head, so publish a stripped copy to the artifact:
 take everything from `<title>` to just before `</head>`, then the contents of
 `<body>`, write that to a scratch file and publish that path with the URL above.
 
+`diary.html` rides along on the artifact as a published file, complete document
+and all, so the Diary link in the top bar works there too. So do the recordings
+in `audio/`. Pass them in `files` on the same publish, or the artifact copy ends
+up with a dead link while Pages is fine.
+
 Never drop the charset from `index.html`. Without it every kana and kanji on the
 page renders as mojibake.
 
-Conventions inside it:
+### The diary page
+
+One `<section>` per day, carrying `data-date="YYYY-MM-DD"`. The calendar builds
+itself from those attributes, so a new entry needs nothing else to appear on it.
+
+Keep an entry to four things and no more: the date heading, the player, the
+whole entry in Japanese, the whole thing in English. No per-sentence pairing, no
+corrections table, no vocabulary grid, no counts, no section intro. Corrections
+belong in `log/mistakes.md`, which is where `/test` reads them from. She stripped
+all of that out once; do not put it back.
+
+Recordings go in `audio/YYYY-MM-DD.mp3` with `preload="none"` on the player. The
+repo is public, so the audio is public: she chose that knowingly on 20 Sep 2026.
+
+Conventions inside the textbook:
 
 - Romaji is primary. Kana and kanji live in `<div class="jp-s">` elements which
   are hidden until the reader flips the script toggle. Always fill them in when
