@@ -152,3 +152,5 @@ been taught is still at L0 and should not be tested until it has.
 | kaisha | company, the office | Conversational | yes | L0 | |
 | shigoto | work, a job | Conversational | yes | L0 | |
 | hajimemasu | to begin something; takes koto o in front of a verb | Conversational | yes | L0 | |
+| ganbarimasu | to do one's best. ganbatte is said to someone else, never about yourself | Conversational | yes | L0 | |
+| mokuhyou | goal | Conversational | yes | L0 | |

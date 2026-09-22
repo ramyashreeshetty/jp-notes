@@ -16,7 +16,7 @@ _Last updated: 2026-09-22 after the second voice diary entry_
 | N5 verbs, practised | 10 | 55 | a sentence of my own exists |
 | N5 verbs, taught | 20 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 25 | 55 | neither |
-| Grammar patterns | 43 | — | 2 at L1, 5 at L2, moved by the voice diary |
+| Grammar patterns | 43 | — | 4 at L1, 5 at L2, moved by the voice diary |
 
 ## Tested
 
@@ -26,9 +26,11 @@ on 20 September, one entry on 22 September.
 At L2: i-adjectives, wa, nakucha, nen/gatsu/nichi, hatsuka, and destination ni,
 which was wrong on 20 September and correct twice on 22 September.
 
-At L1: tame ni, wrong both times, the clauses in the wrong order on 22 September;
-and hajimete, which has now been misused in two different ways, once as a noun
-modifier without no and once fused with the verb hajimemasu.
+At L1: tame ni, wrong both times, the clauses in the wrong order on 22 September.
+hajimete, misused in two different ways, once as a noun modifier without no and
+once fused with the verb hajimemasu. koto, left without a particle after it twice
+in the same recording. de, used for the language being studied rather than for a
+place or a method.
 
 ## Where the gaps are
 
@@ -50,7 +52,7 @@ through the exam. Against N5 itself, using the commonly cited estimates:
 
 | N5 asks for | Has |
 |---|---|
-| ~800 vocabulary | 235 |
+| ~800 vocabulary | 237 |
 | ~100 kanji | 0 readable |
 | 92 kana | 0 readable |
 | ~80-130 grammar points | 43 recorded, about 37 of them N5 |
@@ -70,6 +72,14 @@ list and the one that unblocks everything else.
 
 ## Reading and writing
 
-Not started, deliberately. Kana and kanji are being recorded in `brain/` and in
-the textbook behind the script toggle, so when the reading phase begins the
-material is already there.
+Still not started, but no longer only a distant target. On 22 September she said
+in the diary that her goal is reading and writing Japanese, and that she would
+start writing from 23 September. Nothing in `brain/kanji.md` is tested until she
+says the reading phase has actually begun.
+
+Kana and kanji are being recorded in `brain/` and in the textbook behind the
+script toggle, so when the phase begins the material is already there.
+
+She also reached for "I want to learn", which needs ~たいです. That is on the
+list of N5 basics never taught, and it is now a wanted pattern rather than a
+theoretical gap.

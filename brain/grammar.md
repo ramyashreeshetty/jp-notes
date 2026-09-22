@@ -9,6 +9,8 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 |---|---|---|---|---|---|
 | tame ni | in order to; the purpose clause comes first and the main verb last | Asagohan o taberu tame ni daidokoro ni ikimasu | L1 | 2026-09-22 | 2026-09-18 |
 | hajimete / hajimemasu | hajimete is "for the first time" and goes before a verb; hajimemasu is the verb "to begin" and needs koto o in front of it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-29 |
+| koto | turns a verb into a noun. It is then a noun like any other, so a particle must follow it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-01 |
+| de | place of action, or method. Not the language being studied: that is nihongo o benkyou shimasu | Daidokoro de asagohan o tabemasu | L1 | 2026-09-22 | 2026-07-01 |
 | ni | time, destination, person; a destination is never o | Kaisha ni ikimasen | L2 | 2026-09-22 | 2026-07-01 |
 | wa, the topic particle | marks what the sentence is about; after demo it works as a contrast. Only one per sentence | Demo ie de shigoto wa shimasu | L2 | 2026-09-22 | 2026-07-01 |
 | nen, gatsu, nichi | year, month, day; the month is its number, the day often is not | Kugatsu hatsuka | L2 | 2026-09-20 | 2026-01-16 |
@@ -18,7 +20,6 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | ga, the subject particle | singles the subject out | Watashi ga nihonjin desu | L0 | | 2026-07-08 |
 | no | of, possession and connection | Nihon no anime | L0 | | 2026-07-01 |
 | o | marks the object | Gohan o tabemasu | L0 | | 2026-07-01 |
-| de | place of action, or method | Ie de tabemasu | L0 | | 2026-07-01 |
 | to | with, and | Tomodachi to ikimasu | L0 | | 2026-01-28 |
 | kara | from | Tokyo kara kaerimashita | L0 | | 2026-08-12 |
 | ne, sentence final | shares a feeling and invites agreement, about something already in front of both of you | Ii ne | L0 | | 2026-09-19 |
@@ -43,7 +44,6 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | naide kudasai | please do not | Sawaranaide kudasai | L0 | | 2026-08-20 |
 | nakutemo ii desu | you do not have to | Konakutemo ii desu | L0 | | 2026-08-20 |
 | temo ii desu | it is fine to | Koko de tabetemo ii desu | L0 | | 2026-08-26 |
-| koto | turns a verb into a noun | Taberu koto ga suki desu | L0 | | 2026-07-01 |
 | na-adjectives | considered judgements | Kirei na umi | L0 | | 2026-06-19 |
 | kunai | i-adjective negative | Oishikunai | L0 | | 2026-06-24 |
 | ja nai | na-adjective negative | Suki ja nai | L0 | | 2026-06-24 |
