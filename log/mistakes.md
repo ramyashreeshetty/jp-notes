@@ -16,7 +16,8 @@ leave it. The history of what was hard is useful.
 - **tame ni clauses in the wrong order** - "daidokoro ni iku tame ni asagohan o tabemasu" says the opposite of what she meant. Twice now, 20 and 22 Sep. The purpose goes first, the main verb last.
 - **hajimete and hajimemasu fused** - "kaku koto hajimete imasu". Two different words: one is an adverb, one is a verb, 22 Sep.
 - **koto left without a particle** - "kaku koto hajimete imasu", "benkyou suru koto shimasu". Twice in one recording, 22 Sep. koto makes a noun, and a noun needs a particle.
-- **Month and day readings** - shichigatsu for September, nijuu nichi for hatsuka, 20 Sep.
+- **Month readings** - shichigatsu for September on 20 Sep, then the number dropped altogether on 22 Sep. September is kugatsu, and gatsu never stands alone.
+- **Day-of-month readings** - nijuu nichi for hatsuka, 20 Sep. Correct on 22 Sep, where the plain number is the right one.
 
 ## Log
 
@@ -41,3 +42,5 @@ leave it. The history of what was hard is useful.
 | 2026-09-22 | koto | nihongo de benkyou suru koto shimasu | nihongo o benkyou suru koto o shimasu | koto turns the verb into a noun, and then the noun needs a particle. Left bare both times it came up today. |
 | 2026-09-22 | de vs o | nihongo de benkyou suru | nihongo o benkyou shimasu | de is the medium, as in nihongo de hanasu, speaking in Japanese. When Japanese is the thing being studied it is the object, so o. |
 | 2026-09-22 | ganbarimasu | kurasu de ganbatte | kurasu de ganbarimasu | ganbatte is said to someone else. About yourself it is ganbarimasu. |
+| 2026-09-22 | nen, gatsu, nichi | gatsu nijuuni nichi desu | kugatsu nijuuni nichi desu | The month number went missing. gatsu is only a suffix; September is the 9th month, ku. The day was right: the 22nd has no irregular form. |
+| 2026-09-22 | youbi | kiyobi | kayoubi | Tuesday is ka, fire, plus youbi. The youbi collapsed into one beat. |

@@ -11,9 +11,10 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | hajimete / hajimemasu | hajimete is "for the first time" and goes before a verb; hajimemasu is the verb "to begin" and needs koto o in front of it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-29 |
 | koto | turns a verb into a noun. It is then a noun like any other, so a particle must follow it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-01 |
 | de | place of action, or method. Not the language being studied: that is nihongo o benkyou shimasu | Daidokoro de asagohan o tabemasu | L1 | 2026-09-22 | 2026-07-01 |
+| nen, gatsu, nichi | year, month, day. The month is always its number plus gatsu, and the number is never optional | Kugatsu nijuuni nichi | L1 | 2026-09-22 | 2026-01-16 |
+| youbi | days of the week; the element plus youbi, and youbi keeps all three beats | Kayoubi desu | L1 | 2026-09-22 | 2026-01-20 |
 | ni | time, destination, person; a destination is never o | Kaisha ni ikimasen | L2 | 2026-09-22 | 2026-07-01 |
 | wa, the topic particle | marks what the sentence is about; after demo it works as a contrast. Only one per sentence | Demo ie de shigoto wa shimasu | L2 | 2026-09-22 | 2026-07-01 |
-| nen, gatsu, nichi | year, month, day; the month is its number, the day often is not | Kugatsu hatsuka | L2 | 2026-09-20 | 2026-01-16 |
 | nakute wa naranai / nakucha | must, have to; built on the nai form, not the dictionary form | Hanasanakute wa narimasen | L2 | 2026-09-20 | 2026-08-20 |
 | i-adjectives | instant reactions; the double i is part of the word | Hazukashii desu | L2 | 2026-09-20 | 2026-06-05 |
 | desu / ja nai desu | is / is not, with nouns | Watashi wa kaishain desu | L0 | | 2025-12-10 |
@@ -32,7 +33,6 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | kudasai | please give me | Koohii hitotsu kudasai | L0 | | 2025-12-24 |
 | Numbers 1 to 10,000 | and the sound shifts in between | Ni man hassen roppyaku | L0 | | 2026-01-08 |
 | hitotsu / ikko counters | two counting sets | Koohii hitotsu kudasai | L0 | | 2026-01-08 |
-| youbi | days of the week | Kyou wa ka youbi desu | L0 | | 2026-01-20 |
 | masu | polite present and future | Tabemasu | L0 | | 2026-05-29 |
 | mashita | polite past | Tabemashita | L0 | | 2026-01-28 |
 | masen | polite negative | Tabemasen | L0 | | 2026-06-05 |

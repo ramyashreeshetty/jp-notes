@@ -16,21 +16,22 @@ _Last updated: 2026-09-22 after the second voice diary entry_
 | N5 verbs, practised | 10 | 55 | a sentence of my own exists |
 | N5 verbs, taught | 20 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 25 | 55 | neither |
-| Grammar patterns | 43 | — | 4 at L1, 5 at L2, moved by the voice diary |
+| Grammar patterns | 43 | — | 6 at L1, 4 at L2, moved by the voice diary |
 
 ## Tested
 
 No `/test` run yet. The voice diary is still the only real evidence. Three drafts
 on 20 September, one entry on 22 September.
 
-At L2: i-adjectives, wa, nakucha, nen/gatsu/nichi, hatsuka, and destination ni,
-which was wrong on 20 September and correct twice on 22 September.
+At L2: i-adjectives, wa, nakucha, hatsuka, and destination ni, which was wrong
+on 20 September and correct twice on 22 September.
 
 At L1: tame ni, wrong both times, the clauses in the wrong order on 22 September.
 hajimete, misused in two different ways, once as a noun modifier without no and
 once fused with the verb hajimemasu. koto, left without a particle after it twice
 in the same recording. de, used for the language being studied rather than for a
-place or a method.
+place or a method. nen/gatsu/nichi, which dropped back down when the month lost
+its number. youbi, said as kiyobi rather than kayoubi.
 
 ## Where the gaps are
 
