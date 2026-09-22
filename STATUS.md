@@ -81,6 +81,10 @@ in the diary that her goal is reading and writing Japanese, and that she would
 start writing from 23 September. Nothing in `brain/kanji.md` is tested until she
 says the reading phase has actually begun.
 
+She was offered a hiragana chart section in the textbook on 22 September and
+declined it. Do not add one, and do not ask again: the reading phase starts when
+she says so and not before.
+
 Kana and kanji are being recorded in `brain/` and in the textbook behind the
 script toggle, so when the phase begins the material is already there.
 
