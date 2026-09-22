@@ -2,16 +2,16 @@
 
 Sorted weakest first. Level scale and review intervals: see `../CLAUDE.md`.
 
-Everything here is at L0: it has all been taught, but none of it has been
-tested through this system yet. The first `/test` will move these.
+Most of this is still at L0: taught in class, never tested through this system.
+The rows carrying a date have been moved by a voice diary rather than by `/test`.
 
 | Pattern | Meaning / use | Example | Level | Last tested | First seen |
 |---|---|---|---|---|---|
-| ni | time, destination, person; a destination is never o | Eigakan ni ikimashita | L1 | 2026-09-20 | 2026-07-01 |
-| tame ni | in order to; attaches straight to the plain verb, no particle after it | Eiga o miru tame ni ikimashita | L1 | 2026-09-20 | 2026-09-18 |
-| hajimete | for the first time; hajimete no before a noun | Hajimete no nikki desu | L1 | 2026-09-20 | 2026-07-29 |
+| tame ni | in order to; the purpose clause comes first and the main verb last | Asagohan o taberu tame ni daidokoro ni ikimasu | L1 | 2026-09-22 | 2026-09-18 |
+| hajimete / hajimemasu | hajimete is "for the first time" and goes before a verb; hajimemasu is the verb "to begin" and needs koto o in front of it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-29 |
+| ni | time, destination, person; a destination is never o | Kaisha ni ikimasen | L2 | 2026-09-22 | 2026-07-01 |
+| wa, the topic particle | marks what the sentence is about; after demo it works as a contrast. Only one per sentence | Demo ie de shigoto wa shimasu | L2 | 2026-09-22 | 2026-07-01 |
 | nen, gatsu, nichi | year, month, day; the month is its number, the day often is not | Kugatsu hatsuka | L2 | 2026-09-20 | 2026-01-16 |
-| wa, the topic particle | marks what the sentence is about; only one per sentence | Kore wa hajimete no nikki desu | L2 | 2026-09-20 | 2026-07-01 |
 | nakute wa naranai / nakucha | must, have to; built on the nai form, not the dictionary form | Hanasanakute wa narimasen | L2 | 2026-09-20 | 2026-08-20 |
 | i-adjectives | instant reactions; the double i is part of the word | Hazukashii desu | L2 | 2026-09-20 | 2026-06-05 |
 | desu / ja nai desu | is / is not, with nouns | Watashi wa kaishain desu | L0 | | 2025-12-10 |

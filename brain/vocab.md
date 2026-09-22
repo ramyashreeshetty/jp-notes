@@ -148,3 +148,7 @@ been taught is still at L0 and should not be tested until it has.
 | eigakan | cinema | Conversational | yes | L0 | |
 | nikki | diary | Conversational | yes | L0 | |
 | onsei nikki | voice diary, audio diary | Conversational | yes | L0 | |
+| daidokoro | kitchen | Conversational | yes | L0 | |
+| kaisha | company, the office | Conversational | yes | L0 | |
+| shigoto | work, a job | Conversational | yes | L0 | |
+| hajimemasu | to begin something; takes koto o in front of a verb | Conversational | yes | L0 | |

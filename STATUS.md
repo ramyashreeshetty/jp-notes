@@ -1,6 +1,6 @@
 # Status
 
-_Last updated: 2026-09-20 after correcting a voice diary draft_
+_Last updated: 2026-09-22 after the second voice diary entry_
 
 ## Where I'm at
 
@@ -16,14 +16,19 @@ _Last updated: 2026-09-20 after correcting a voice diary draft_
 | N5 verbs, practised | 10 | 55 | a sentence of my own exists |
 | N5 verbs, taught | 20 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 25 | 55 | neither |
-| Grammar patterns | 41 | — | 3 at L1, 4 at L2, from a voice diary draft |
+| Grammar patterns | 43 | — | 2 at L1, 5 at L2, moved by the voice diary |
 
 ## Tested
 
-No `/test` run yet. Three drafts of a voice diary on 20 September produced the
-first real evidence. Five items reached L2 by being corrected and then used
-correctly: i-adjectives, wa, nakucha, nen/gatsu/nichi, hatsuka. Three sit at L1,
-wrong once and not yet re-used: destination ni, tame ni, hajimete no.
+No `/test` run yet. The voice diary is still the only real evidence. Three drafts
+on 20 September, one entry on 22 September.
+
+At L2: i-adjectives, wa, nakucha, nen/gatsu/nichi, hatsuka, and destination ni,
+which was wrong on 20 September and correct twice on 22 September.
+
+At L1: tame ni, wrong both times, the clauses in the wrong order on 22 September;
+and hajimete, which has now been misused in two different ways, once as a noun
+modifier without no and once fused with the verb hajimemasu.
 
 ## Where the gaps are
 
@@ -45,10 +50,10 @@ through the exam. Against N5 itself, using the commonly cited estimates:
 
 | N5 asks for | Has |
 |---|---|
-| ~800 vocabulary | 231 |
+| ~800 vocabulary | 235 |
 | ~100 kanji | 0 readable |
 | 92 kana | 0 readable |
-| ~80-130 grammar points | 40 recorded, about 34 of them N5 |
+| ~80-130 grammar points | 43 recorded, about 37 of them N5 |
 
 Six of the 40 patterns are already N4: tame ni, nakute wa naranai, nakucha,
 nakutemo ii desu, temo ii desu, nazenara ... kara desu. Class is taught for
