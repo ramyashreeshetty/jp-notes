@@ -154,3 +154,6 @@ been taught is still at L0 and should not be tested until it has.
 | hajimemasu | to begin something; takes koto o in front of a verb | Conversational | yes | L0 | |
 | ganbarimasu | to do one's best. ganbatte is said to someone else, never about yourself | Conversational | yes | L0 | |
 | mokuhyou | goal | Conversational | yes | L0 | |
+| manabu | to learn | Conversational | yes | L0 | |
+| shinu | to die | Conversational | yes | L0 | |
+| isogu | to hurry | Conversational | yes | L0 | |

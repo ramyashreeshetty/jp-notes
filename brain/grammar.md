@@ -11,6 +11,10 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | hajimete / hajimemasu | hajimete is "for the first time" and goes before a verb; hajimemasu is the verb "to begin" and needs koto o in front of it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-29 |
 | koto | turns a verb into a noun. It is then a noun like any other, so a particle must follow it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-01 |
 | de | place of action, or method. Not the language being studied: that is nihongo o benkyou shimasu | Daidokoro de asagohan o tabemasu | L1 | 2026-09-22 | 2026-07-01 |
+| te form | the base three patterns are built on; the shape is fixed by verb group | Taberu to tabete, kaku to kaite | L0 | | 2026-09-21 |
+| te imasu | in the middle of doing, a process underway | Ame ga futte imasu | L0 | | 2026-09-21 |
+| te, te, masu | chains actions in order, and then | Okite, asagohan o tabete, kaisha ni ikimasu | L0 | | 2026-09-21 |
+| te kudasai | please do | Matte kudasai | L0 | | 2026-09-21 |
 | nen, gatsu, nichi | year, month, day. The month is always its number plus gatsu, and the number is never optional | Kugatsu nijuuni nichi | L1 | 2026-09-22 | 2026-01-16 |
 | youbi | days of the week; the element plus youbi, and youbi keeps all three beats | Kayoubi desu | L1 | 2026-09-22 | 2026-01-20 |
 | ni | time, destination, person; a destination is never o | Kaisha ni ikimasen | L2 | 2026-09-22 | 2026-07-01 |
