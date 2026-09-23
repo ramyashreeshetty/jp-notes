@@ -1,10 +1,10 @@
 # Status
 
-_Last updated: 2026-09-22 after ingesting the 21 September class on the て form_
+_Last updated: 2026-09-23 after ingesting the 23 September class on what the て form does_
 
 ## Where I'm at
 
-**Classes:** 24, from 2 December 2025 to 21 September 2026 (no classes February to May)
+**Classes:** 25, from 2 December 2025 to 23 September 2026 (no classes February to May)
 **Mode:** conversational, romaji only. Reading and writing not started.
 **Curriculum:** みんなの日本語 初級1, though class runs ahead of the book
 
@@ -14,9 +14,9 @@ _Last updated: 2026-09-22 after ingesting the 21 September class on the て form
 |---|---|---|---|
 | Slide-deck vocabulary | 78 | 131 | met in a class note at least once |
 | N5 verbs, practised | 10 | 55 | a sentence of my own exists |
-| N5 verbs, taught | 24 | 55 | covered in class, no sentence of my own |
-| N5 verbs, untouched | 21 | 55 | neither |
-| Grammar patterns | 47 | — | 6 at L1, 4 at L2, and the て form newly at L0 |
+| N5 verbs, taught | 25 | 55 | covered in class, no sentence of my own |
+| N5 verbs, untouched | 20 | 55 | neither |
+| Grammar patterns | 49 | — | 6 at L1, 4 at L2, and the て form newly at L0 |
 
 ## Tested
 
@@ -53,22 +53,25 @@ through the exam. Against N5 itself, using the commonly cited estimates:
 
 | N5 asks for | Has |
 |---|---|
-| ~800 vocabulary | 240 |
+| ~800 vocabulary | 256 |
 | ~100 kanji | 0 readable |
 | 92 kana | 0 readable |
-| ~80-130 grammar points | 47 recorded, about 41 of them N5 |
+| ~80-130 grammar points | 49 recorded, about 43 of them N5 |
 
 Six of the 40 patterns are already N4: tame ni, nakute wa naranai, nakucha,
 nakutemo ii desu, temo ii desu, nazenara ... kara desu. Class is taught for
 conversation, so N4 grammar has arrived while some N5 foundations have not.
 
-**The て form arrived on 21 September.** It was the largest single gap on this
-page and it is now taught: all three groups, with te imasu, te kudasai and verb
-chaining. Nothing has been built with it yet, so it sits at L0.
+**The て form arrived on 21 and 23 September**, the conjugation first and then
+what it does. It was the largest single gap on this page and it is now covered:
+all three groups, te imasu in both its senses, verb chaining, and te kudasai.
+The 23 September class also brought **imasu** for animate existence, which was
+its own line on this list. Nothing has been built with any of it yet, so it all
+sits at L0 until a diary entry or a test moves it.
 
 **N5 basics still never taught**, each checked against the class notes rather
-than assumed: imasu for animate existence, ~たいです, ~ましょう, counters beyond
--tsu and -ko, yori and no hou ga, ~くなかった, and position words.
+than assumed: ~たいです, ~ましょう, counters beyond -tsu and -ko, yori and no
+hou ga, ~くなかった, and position words.
 
 She cannot sit N5 today, and the reason is script rather than grammar: the paper
 is entirely in Japanese with no romaji anywhere. Kana is the cheapest item on the

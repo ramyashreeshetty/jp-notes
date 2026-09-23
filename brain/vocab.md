@@ -157,3 +157,19 @@ been taught is still at L0 and should not be tested until it has.
 | manabu | to learn | Conversational | yes | L0 | |
 | shinu | to die | Conversational | yes | L0 | |
 | isogu | to hurry | Conversational | yes | L0 | |
+| ongaku | music | Conversational | yes | L0 | |
+| terebi | television | Conversational | yes | L0 | |
+| asobu | to play; the place takes de, kouen de asobimasu | Conversational | yes | L0 | |
+| sawaru | to touch | Conversational | yes | L0 | |
+| tsukau | to use | Conversational | yes | L0 | |
+| itsumo | always | Conversational | yes | L0 | |
+| fudan | usually, normally | Conversational | yes | L0 | |
+| odaijini | take care, said to someone unwell | Conversational | yes | L0 | |
+| itai | it hurts | Conversational | yes | L0 | |
+| yakedo | a burn | Conversational | yes | L0 | |
+| manga | manga | Conversational | yes | L0 | |
+| sumaho | smartphone | Conversational | yes | L0 | |
+| beddo | bed | Conversational | yes | L0 | |
+| puuru | swimming pool | Conversational | yes | L0 | |
+| pasuta | pasta | Conversational | yes | L0 | |
+| sarada | salad | Conversational | yes | L0 | |
