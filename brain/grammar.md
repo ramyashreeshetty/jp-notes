@@ -17,6 +17,11 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | to versus te, for and | to joins nouns, the te form joins verbs | Pan to sarada; pan o tabete, koohii o nomimasu | L0 | | 2026-09-23 |
 | te, te, masu | chains actions in order, and then | Okite, asagohan o tabete, kaisha ni ikimasu | L0 | | 2026-09-21 |
 | te kudasai | please do | Matte kudasai | L0 | | 2026-09-21 |
+| mae ni | before doing something: plain dictionary verb plus mae ni, or a noun plus no mae ni | Neru mae ni mizu o sukoshi nomimasu | L0 | | 2026-09-19 |
+| no ato de | after something: noun plus no ato de | Shigoto no ato de uchi ni kaerimasu | L0 | | 2026-09-19 |
+| toki | when, at the time of. The clause in front of it stays plain | Samui toki atsui ocha o nomimasu | L0 | | 2026-09-19 |
+| amari ... masen | not much, not often. The negative verb at the end is not optional | Amari niku o tabemasen | L0 | | 2026-09-19 |
+| ga, joining two clauses | but. Softer than demo, and it stays inside one sentence | Futsuu wa koohii o nomimasu ga, kyou wa ocha o nomimasu | L0 | | 2026-09-30 |
 | nen, gatsu, nichi | year, month, day. The month is always its number plus gatsu, and the number is never optional | Kugatsu nijuuni nichi | L1 | 2026-09-22 | 2026-01-16 |
 | youbi | days of the week; the element plus youbi, and youbi keeps all three beats | Kayoubi desu | L1 | 2026-09-22 | 2026-01-20 |
 | ni | time, destination, person; a destination is never o | Kaisha ni ikimasen | L2 | 2026-09-22 | 2026-07-01 |

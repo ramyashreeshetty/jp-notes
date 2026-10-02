@@ -1,6 +1,6 @@
 # Status
 
-_Last updated: 2026-09-23 after ingesting the 23 September class on what the て form does_
+_Last updated: 2026-10-02 after ingesting the sentences added to the teacher's verb sheet on 30 September_
 
 ## Where I'm at
 
@@ -13,10 +13,10 @@ _Last updated: 2026-09-23 after ingesting the 23 September class on what the て
 | | Have | Total | Note |
 |---|---|---|---|
 | Slide-deck vocabulary | 78 | 131 | met in a class note at least once |
-| N5 verbs, practised | 10 | 55 | a sentence of my own exists |
-| N5 verbs, taught | 25 | 55 | covered in class, no sentence of my own |
+| N5 verbs, practised | 14 | 55 | a sentence of my own exists |
+| N5 verbs, taught | 21 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 20 | 55 | neither |
-| Grammar patterns | 49 | — | 6 at L1, 4 at L2, and the て form newly at L0 |
+| Grammar patterns | 54 | — | 6 at L1, 4 at L2, the て form and five time patterns at L0 |
 
 ## Tested
 
@@ -35,13 +35,14 @@ its number. youbi, said as kiyobi rather than kayoubi.
 
 ## Where the gaps are
 
-- **Verbs.** 20 verbs have been taught but never used in a sentence. These are
+- **Verbs.** 21 verbs have been taught but never used in a sentence. These are
   the cheapest thing to fix: the grammar is already there, only the verb is new.
+  Four came off this list on 30 September: kuru, kaeru, nomu and kiku.
 - **Days of the month.** tsuitachi, futsuka, yokka, muika, nanoka, youka,
   kokonoka and the rest are in the lesson 5 deck but have not come up in class.
   Dates are already being used, so this is a small, self-contained gap.
-- **Months relative to now.** sengetsu, kongetsu, raigetsu, kyonen, kotoshi,
-  rainen. The weekly versions are known, so the pattern transfers.
+- **Months relative to now.** sengetsu, kongetsu, kyonen, kotoshi, rainen.
+  raigetsu is now in a sentence of her own; the rest follow the same pattern.
 - **Transport.** Most of the transport deck is untouched: kuruma, fune,
   chikatetsu, shinkansen, takushii, jitensha, aruite.
 - **Everyday food.** pan, tamago, sakana, yasai, kudamono.
