@@ -173,3 +173,8 @@ been taught is still at L0 and should not be tested until it has.
 | puuru | swimming pool | Conversational | yes | L0 | |
 | pasuta | pasta | Conversational | yes | L0 | |
 | sarada | salad | Conversational | yes | L0 | |
+| ryokou | a trip, travel | Conversational | yes | L0 | |
+| shoppingu | shopping | Conversational | yes | L0 | |
+| heta | bad at something | Conversational | yes | L0 | |
+| mada | still, not yet | Conversational | yes | L0 | |
+| tanjoubi | birthday | Conversational | yes | L0 | |

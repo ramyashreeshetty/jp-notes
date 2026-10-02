@@ -1,6 +1,6 @@
 # Status
 
-_Last updated: 2026-10-02 after ingesting the sentences added to the teacher's verb sheet on 30 September_
+_Last updated: 2026-10-02 after the verb sheet and the untracked 26 September voice diary_
 
 ## Where I'm at
 
@@ -13,31 +13,29 @@ _Last updated: 2026-10-02 after ingesting the sentences added to the teacher's v
 | | Have | Total | Note |
 |---|---|---|---|
 | Slide-deck vocabulary | 78 | 131 | met in a class note at least once |
-| N5 verbs, practised | 14 | 55 | a sentence of my own exists |
-| N5 verbs, taught | 21 | 55 | covered in class, no sentence of my own |
+| N5 verbs, practised | 17 | 55 | a sentence of my own exists |
+| N5 verbs, taught | 18 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 20 | 55 | neither |
-| Grammar patterns | 54 | — | 6 at L1, 4 at L2, the て form and five time patterns at L0 |
+| Grammar patterns | 56 | — | 2 at L1, 7 at L2, destination ni at L3 |
 
 ## Tested
 
-No `/test` run yet. The voice diary is still the only real evidence. Three drafts
-on 20 September, one entry on 22 September.
+No `/test` run yet. The voice diary is still the only real evidence: three drafts
+on 20 September, then entries on 22 and 26 September.
 
-At L2: i-adjectives, wa, nakucha, hatsuka, and destination ni, which was wrong
-on 20 September and correct twice on 22 September.
+The 26 September recording had no errors in it, which is the first time that has
+happened. It moved destination **ni** to L3, and **de**, **nen/gatsu/nichi**,
+**youbi** and **hajimete** to L2, alongside the five already there.
 
-At L1: tame ni, wrong both times, the clauses in the wrong order on 22 September.
-hajimete, misused in two different ways, once as a noun modifier without no and
-once fused with the verb hajimemasu. koto, left without a particle after it twice
-in the same recording. de, used for the language being studied rather than for a
-place or a method. nen/gatsu/nichi, which dropped back down when the month lost
-its number. youbi, said as kiyobi rather than kayoubi.
+Two things stay at L1, both wrong twice and not used since: **tame ni**, with the
+clauses in the wrong order, and **koto**, left without a particle after it.
 
 ## Where the gaps are
 
-- **Verbs.** 21 verbs have been taught but never used in a sentence. These are
+- **Verbs.** 18 verbs have been taught but never used in a sentence. These are
   the cheapest thing to fix: the grammar is already there, only the verb is new.
-  Four came off this list on 30 September: kuru, kaeru, nomu and kiku.
+  Seven came off this list: kuru, kaeru, nomu and kiku from the verb sheet, and
+  kaku, yomu and hajimeru from the voice diary.
 - **Days of the month.** tsuitachi, futsuka, yokka, muika, nanoka, youka,
   kokonoka and the rest are in the lesson 5 deck but have not come up in class.
   Dates are already being used, so this is a small, self-contained gap.

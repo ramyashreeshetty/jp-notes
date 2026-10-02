@@ -8,23 +8,25 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | Pattern | Meaning / use | Example | Level | Last tested | First seen |
 |---|---|---|---|---|---|
 | tame ni | in order to; the purpose clause comes first and the main verb last | Asagohan o taberu tame ni daidokoro ni ikimasu | L1 | 2026-09-22 | 2026-09-18 |
-| hajimete / hajimemasu | hajimete is "for the first time" and goes before a verb; hajimemasu is the verb "to begin" and needs koto o in front of it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-29 |
+| hajimete / hajimemasu | hajimete is "for the first time" and goes before a verb; hajimemasu is the verb "to begin" and needs koto o in front of it | Hajimete hiragana o benkyou shimashita | L2 | 2026-09-26 | 2026-07-29 |
 | koto | turns a verb into a noun. It is then a noun like any other, so a particle must follow it | Nihongo o kaku koto o hajimemasu | L1 | 2026-09-22 | 2026-07-01 |
-| de | place of action, or method. Not the language being studied: that is nihongo o benkyou shimasu | Daidokoro de asagohan o tabemasu | L1 | 2026-09-22 | 2026-07-01 |
+| de | place of action, or method. Not the language being studied: that is nihongo o benkyou shimasu | Mooru de fuku o kaimasu | L2 | 2026-09-26 | 2026-07-01 |
 | te form | the base three patterns are built on; the shape is fixed by verb group | Taberu to tabete, kaku to kaite | L0 | | 2026-09-21 |
 | te imasu | two senses: an action in progress right now, and an ongoing state or habit | Ongaku o kiite imasu; Tokyo ni sunde imasu | L0 | | 2026-09-21 |
 | imasu | there is, for people and animals, where things take arimasu | Watashi wa kouen ni imasu | L0 | | 2026-09-23 |
 | to versus te, for and | to joins nouns, the te form joins verbs | Pan to sarada; pan o tabete, koohii o nomimasu | L0 | | 2026-09-23 |
 | te, te, masu | chains actions in order, and then | Okite, asagohan o tabete, kaisha ni ikimasu | L0 | | 2026-09-21 |
 | te kudasai | please do | Matte kudasai | L0 | | 2026-09-21 |
+| node | because, so. It attaches to the plain form; a noun or a na-adjective takes na in front of it | Kareshi no tanjoubi na node, Pune ni ikimasu | L0 | | 2026-09-26 |
+| no, the nominaliser | turns a verb into a noun, the same job as koto. no is the spoken one | Nihongo o kaku no wa muzukashii desu | L0 | | 2026-09-26 |
 | mae ni | before doing something: plain dictionary verb plus mae ni, or a noun plus no mae ni | Neru mae ni mizu o sukoshi nomimasu | L0 | | 2026-09-19 |
 | no ato de | after something: noun plus no ato de | Shigoto no ato de uchi ni kaerimasu | L0 | | 2026-09-19 |
 | toki | when, at the time of. The clause in front of it stays plain | Samui toki atsui ocha o nomimasu | L0 | | 2026-09-19 |
 | amari ... masen | not much, not often. The negative verb at the end is not optional | Amari niku o tabemasen | L0 | | 2026-09-19 |
 | ga, joining two clauses | but. Softer than demo, and it stays inside one sentence | Futsuu wa koohii o nomimasu ga, kyou wa ocha o nomimasu | L0 | | 2026-09-30 |
-| nen, gatsu, nichi | year, month, day. The month is always its number plus gatsu, and the number is never optional | Kugatsu nijuuni nichi | L1 | 2026-09-22 | 2026-01-16 |
-| youbi | days of the week; the element plus youbi, and youbi keeps all three beats | Kayoubi desu | L1 | 2026-09-22 | 2026-01-20 |
-| ni | time, destination, person; a destination is never o | Kaisha ni ikimasen | L2 | 2026-09-22 | 2026-07-01 |
+| nen, gatsu, nichi | year, month, day. The month is always its number plus gatsu, and the number is never optional | Kugatsu nijuuroku nichi | L2 | 2026-09-26 | 2026-01-16 |
+| youbi | days of the week; the element plus youbi, and youbi keeps all three beats | Doyoubi desu | L2 | 2026-09-26 | 2026-01-20 |
+| ni | time, destination, person; a destination is never o | Pune ni ikimasu | L3 | 2026-09-26 | 2026-07-01 |
 | wa, the topic particle | marks what the sentence is about; after demo it works as a contrast. Only one per sentence | Demo ie de shigoto wa shimasu | L2 | 2026-09-22 | 2026-07-01 |
 | nakute wa naranai / nakucha | must, have to; built on the nai form, not the dictionary form | Hanasanakute wa narimasen | L2 | 2026-09-20 | 2026-08-20 |
 | i-adjectives | instant reactions; the double i is part of the word | Hazukashii desu | L2 | 2026-09-20 | 2026-06-05 |
