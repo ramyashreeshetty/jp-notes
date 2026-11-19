@@ -178,3 +178,28 @@ been taught is still at L0 and should not be tested until it has.
 | heta | bad at something | Conversational | yes | L0 | |
 | mada | still, not yet | Conversational | yes | L0 | |
 | tanjoubi | birthday | Conversational | yes | L0 | |
+| sabishii | lonely | Conversational | yes | L0 | |
+| mado | window | Conversational | yes | L0 | |
+| tori | bird | Conversational | yes | L0 | |
+| renshuu | practice | Conversational | yes | L0 | |
+| ue | up, on top of | Conversational | yes | L0 | |
+| shita | down, underneath | Conversational | yes | L0 | |
+| naka | inside | Conversational | yes | L0 | |
+| soto | outside | Conversational | yes | L0 | |
+| mae | front, and also before in time | Conversational | yes | L0 | |
+| ushiro | behind. Only spatial: after in time is ato | Conversational | yes | L0 | |
+| aida | the space between two things | Conversational | yes | L0 | |
+| ichi | position | Conversational | yes | L0 | |
+| hako | box | Conversational | yes | L0 | |
+| tsukue | table, desk | Conversational | yes | L0 | |
+| kaaten | curtain | Conversational | yes | L0 | |
+| aji | flavour, taste | Conversational | yes | L0 | |
+| usui | thin, weakly flavoured | Conversational | yes | L0 | |
+| koi | strong, richly flavoured | Conversational | yes | L0 | |
+| gaikokujin | foreigner | Conversational | yes | L0 | |
+| machi | town, city | Conversational | yes | L0 | |
+| saigo no hi | the last day | Conversational | yes | L0 | |
+| denwa shimasu | to telephone someone; the person takes ni | Conversational | yes | L0 | |
+| undou | exercise | Conversational | yes | L0 | |
+| jimu | gym | Conversational | yes | L0 | |
+| dezaato | dessert | Conversational | yes | L0 | |

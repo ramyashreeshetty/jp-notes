@@ -17,6 +17,7 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | to versus te, for and | to joins nouns, the te form joins verbs | Pan to sarada; pan o tabete, koohii o nomimasu | L0 | | 2026-09-23 |
 | te, te, masu | chains actions in order, and then | Okite, asagohan o tabete, kaisha ni ikimasu | L0 | | 2026-09-21 |
 | te kudasai | please do | Matte kudasai | L0 | | 2026-09-21 |
+| tai desu | want to do. Drop masu from the masu form and add tai; it then behaves as an i-adjective | Nihongo o benkyou shitai desu | L0 | | 2026-10-02 |
 | node | because, so. It attaches to the plain form; a noun or a na-adjective takes na in front of it | Kareshi no tanjoubi na node, Pune ni ikimasu | L0 | | 2026-09-26 |
 | no, the nominaliser | turns a verb into a noun, the same job as koto. no is the spoken one | Nihongo o kaku no wa muzukashii desu | L0 | | 2026-09-26 |
 | mae ni | before doing something: plain dictionary verb plus mae ni, or a noun plus no mae ni | Neru mae ni mizu o sukoshi nomimasu | L0 | | 2026-09-19 |
@@ -36,13 +37,13 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | o | marks the object | Gohan o tabemasu | L0 | | 2026-07-01 |
 | to | with, and | Tomodachi to ikimasu | L0 | | 2026-01-28 |
 | kara | from | Tokyo kara kaerimashita | L0 | | 2026-08-12 |
-| ne, sentence final | shares a feeling and invites agreement, about something already in front of both of you | Ii ne | L0 | | 2026-09-19 |
+| ne, sentence final | shares a feeling and invites agreement, about something already in front of both of you. Not for your own state, which the listener cannot confirm | Ii ne | L1 | 2026-10-02 | 2026-09-19 |
 | yo, sentence final | tells the listener something only you know: your decision, your permission | Ii yo | L0 | | 2026-09-19 |
 | kore / sore / are | this, that, that over there | Kore wa watashi no desu | L0 | | 2025-12-17 |
 | kono / sono / ano | the same, before a noun | Kono neko wa kawaii desu | L0 | | 2025-12-17 |
 | doko, nan, itsu | where, what, when | Byouin wa doko desu ka | L0 | | 2025-12-17 |
 | doko (ni) mo + negative | not anywhere; same shape as nani mo, dare mo. With ikimasu keep the ni | Doko ni mo ikimasen | L0 | | 2026-09-20 |
-| arimasu / arimasen | there is, there is not | Zasshi wa arimasu ka | L0 | | 2025-12-19 |
+| arimasu / arimasen | there is, there is not. What exists takes ga, never o | Shigoto ga takusan arimasu | L1 | 2026-10-02 | 2025-12-19 |
 | kudasai | please give me | Koohii hitotsu kudasai | L0 | | 2025-12-24 |
 | Numbers 1 to 10,000 | and the sound shifts in between | Ni man hassen roppyaku | L0 | | 2026-01-08 |
 | hitotsu / ikko counters | two counting sets | Koohii hitotsu kudasai | L0 | | 2026-01-08 |
@@ -63,3 +64,8 @@ The rows carrying a date have been moved by a voice diary rather than by `/test`
 | katta | i-adjective past | Tanoshikatta desu | L0 | | 2026-09-18 |
 | nazenara ... kara desu | because | Nazenara purezen ga atta kara desu | L0 | | 2026-09-18 |
 | kan and me | duration, and ordinal days | Mikka kan, mikka me | L0 | | 2026-09-18 |
+| masu stem + ni ikimasu | go somewhere in order to do something; the verb drops masu and takes ni | Eiga o mi ni ikimasu | L0 | | 2026-10-07 |
+| no, as a nominaliser | turns a verb into a noun, the same job as koto | Kaku no o hajimemasu | L0 | | 2026-10-07 |
+| Position words | X wa Y no ue ni imasu. The no is not optional, and imasu or arimasu follows the rule for living things | Neko wa hako no naka ni imasu | L0 | | 2026-11-18 |
+| aida ni | between two things, which are joined by to | Hon wa hako to isu no aida ni arimasu | L0 | | 2026-11-18 |
+| sono mae ni, sono ato ni | before that, after that | Sono ato ni imouto ni denwa shimashita | L0 | | 2026-11-18 |

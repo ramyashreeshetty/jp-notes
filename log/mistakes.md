@@ -23,6 +23,12 @@ leave it. The history of what was hard is useful.
 
 | Date | Item | What I answered | Correct | Why I got it wrong |
 |---|---|---|---|---|
+| 2026-10-02 | Verb groups 1, 2, 3 | hanasumasen | hanashimasen | hanasu is group 2, so su becomes shi before masu. The dictionary form cannot take masu directly. |
+| 2026-10-02 | ne, sentence final | 忙しいですね, about herself | 忙しいです | ne asks the listener to agree. They cannot agree about how busy you feel; they were not there. |
+| 2026-10-02 | kiku | ひらがなを聞きます | ひらがなを勉強します / 練習します | kiku is listening or asking. A script is studied or practised, not listened to. |
+| 2026-10-02 | arimasu / arimasen | 仕事をあります | 仕事があります | Marked the thing that exists with o. arimasu has no object; what exists is the subject, so it takes ga. |
+| 2026-10-02 | totemo | とっても仕事があります | 仕事がたくさんあります | totemo and tottemo stretch an adjective, not a noun. A lot of something is takusan. |
+| 2026-10-02 | te form | okite okimashita | okimashita | Said the te form and the past form of the same verb back to back. Only one verb was needed. |
 | 2026-09-20 | i-adjectives | hazukashi desu, muzukashi desu | hazukashii desu, muzukashii desu | Dropped the second i. The i is part of the stem, not a grammar ending. |
 | 2026-09-20 | nakute wa naranai / nakucha | hanasu kucha na kucha | hanasanakucha | Attached kucha to the dictionary form. It builds on the nai form: hanasanai to hanasanakucha. |
 | 2026-09-20 | wa, the topic particle | watashi wa nihongo de hanasu koto wa hazukashii desu | Nihongo de hanasu koto wa hazukashii desu | Two wa in one sentence. Once koto wa is the topic, watashi wa has nothing left to do. |

@@ -1,10 +1,13 @@
 # Status
 
-_Last updated: 2026-10-02 after the verb sheet and the untracked 26 September voice diary_
+_Last updated: 2026-11-19 after ingesting the 7 October and 18 November classes_
 
 ## Where I'm at
 
-**Classes:** 25, from 2 December 2025 to 23 September 2026 (no classes February to May)
+**Classes:** 27 notes on file, 2 December 2025 to 18 November 2026 (no classes
+February to May). The record has a hole in it: at four classes a month there
+should be roughly eight more between 23 September and 18 November, and only
+7 October was kept. Anything taught in those is missing from this page.
 **Mode:** conversational, romaji only. Reading and writing not started.
 **Curriculum:** みんなの日本語 初級1, though class runs ahead of the book
 
@@ -16,7 +19,7 @@ _Last updated: 2026-10-02 after the verb sheet and the untracked 26 September vo
 | N5 verbs, practised | 17 | 55 | a sentence of my own exists |
 | N5 verbs, taught | 18 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 20 | 55 | neither |
-| Grammar patterns | 56 | — | 2 at L1, 7 at L2, destination ni at L3 |
+| Grammar patterns | 62 | — | 2 at L1, 7 at L2, destination ni at L3 |
 
 ## Tested
 
@@ -52,10 +55,10 @@ through the exam. Against N5 itself, using the commonly cited estimates:
 
 | N5 asks for | Has |
 |---|---|
-| ~800 vocabulary | 256 |
+| ~800 vocabulary | 277 |
 | ~100 kanji | 0 readable |
 | 92 kana | 0 readable |
-| ~80-130 grammar points | 49 recorded, about 43 of them N5 |
+| ~80-130 grammar points | 62 recorded, about 56 of them N5 |
 
 Six of the 40 patterns are already N4: tame ni, nakute wa naranai, nakucha,
 nakutemo ii desu, temo ii desu, nazenara ... kara desu. Class is taught for
@@ -68,9 +71,13 @@ The 23 September class also brought **imasu** for animate existence, which was
 its own line on this list. Nothing has been built with any of it yet, so it all
 sits at L0 until a diary entry or a test moves it.
 
+**Position words arrived on 18 November**: ue, shita, naka, soto, mae, ushiro,
+aida, with imasu and arimasu behind them. That was the last of the large items.
+
 **N5 basics still never taught**, each checked against the class notes rather
 than assumed: ~たいです, ~ましょう, counters beyond -tsu and -ko, yori and no
-hou ga, ~くなかった, and position words.
+hou ga, and ~くなかった. Four of the five are small. Counters are the only one
+with real bulk to it.
 
 She cannot sit N5 today, and the reason is script rather than grammar: the paper
 is entirely in Japanese with no romaji anywhere. Kana is the cheapest item on the
@@ -78,18 +85,9 @@ list and the one that unblocks everything else.
 
 ## Reading and writing
 
-Still not started, but no longer only a distant target. On 22 September she said
-in the diary that her goal is reading and writing Japanese, and that she would
-start writing from 23 September. Nothing in `brain/kanji.md` is tested until she
-says the reading phase has actually begun.
+She started hiragana on 26 September, and on 2 October wrote most of a diary
+draft in kana and kanji herself rather than in romaji. The brain and the textbook
+have carried the script all along for exactly this moment.
 
-She was offered a hiragana chart section in the textbook on 22 September and
-declined it. Do not add one, and do not ask again: the reading phase starts when
-she says so and not before.
-
-Kana and kanji are being recorded in `brain/` and in the textbook behind the
-script toggle, so when the phase begins the material is already there.
-
-She also reached for "I want to learn", which needs ~たいです. That is on the
-list of N5 basics never taught, and it is now a wanted pattern rather than a
-theoretical gap.
+Testing is still romaji only. That holds until she says otherwise: writing a
+sentence with an IME to hand is not the same as reading one cold.
