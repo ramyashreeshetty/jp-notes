@@ -4,11 +4,12 @@ _Last updated: 2026-11-19 after ingesting the 7 October and 18 November classes_
 
 ## Where I'm at
 
-**Classes:** 27 notes on file, 2 December 2025 to 18 November 2026 (no classes
-February to May). The record has a hole in it: at four classes a month there
-should be roughly eight more between 23 September and 18 November, and only
-7 October was kept. Anything taught in those is missing from this page.
-**Mode:** conversational, romaji only. Reading and writing not started.
+**Classes:** 27, 2 December 2025 to 18 November 2026. Two breaks in that span,
+February to May and again through October and early November, so the thin
+stretch between the 23 September and 18 November notes is a gap in the classes
+rather than a gap in the record. Everything taught is on file.
+**Mode:** conversational. Testing is romaji only, and stays that way until she
+says otherwise. Hiragana started on 26 September, separately from class.
 **Curriculum:** みんなの日本語 初級1, though class runs ahead of the book
 
 ## Coverage
@@ -19,19 +20,22 @@ should be roughly eight more between 23 September and 18 November, and only
 | N5 verbs, practised | 17 | 55 | a sentence of my own exists |
 | N5 verbs, taught | 18 | 55 | covered in class, no sentence of my own |
 | N5 verbs, untouched | 20 | 55 | neither |
-| Grammar patterns | 62 | — | 2 at L1, 7 at L2, destination ni at L3 |
+| Grammar patterns | 62 | — | 4 at L1, 7 at L2, destination ni at L3 |
 
 ## Tested
 
 No `/test` run yet. The voice diary is still the only real evidence: three drafts
-on 20 September, then entries on 22 and 26 September.
+on 20 September, entries on 22 and 26 September, and a draft on 2 October.
 
 The 26 September recording had no errors in it, which is the first time that has
 happened. It moved destination **ni** to L3, and **de**, **nen/gatsu/nichi**,
 **youbi** and **hajimete** to L2, alongside the five already there.
 
-Two things stay at L1, both wrong twice and not used since: **tame ni**, with the
-clauses in the wrong order, and **koto**, left without a particle after it.
+Four things sit at L1. **tame ni**, with the clauses in the wrong order, and
+**koto**, left without a particle after it, have both been wrong twice and not
+used since. **ne** and **arimasu** dropped there on 2 October: ne was used about
+her own feelings, which the listener cannot agree with, and arimasu was given an
+object with o when what exists takes ga.
 
 ## Where the gaps are
 
@@ -60,7 +64,7 @@ through the exam. Against N5 itself, using the commonly cited estimates:
 | 92 kana | 0 readable |
 | ~80-130 grammar points | 62 recorded, about 56 of them N5 |
 
-Six of the 40 patterns are already N4: tame ni, nakute wa naranai, nakucha,
+Six of the 62 patterns are already N4: tame ni, nakute wa naranai, nakucha,
 nakutemo ii desu, temo ii desu, nazenara ... kara desu. Class is taught for
 conversation, so N4 grammar has arrived while some N5 foundations have not.
 

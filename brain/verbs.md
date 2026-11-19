@@ -6,7 +6,8 @@ The 55 N5 verbs from `notes/reference/n5-verb-list.xlsx`, in three tiers.
 - **Taught** — the verb appears in a class note, but she has not built a sentence with it
 - **Untouched** — neither
 
-Counts as of 26 September 2026: 17 practised, 18 taught, 20 untouched.
+Counts as of 19 November 2026: 17 practised, 18 taught, 20 untouched.
+The October and November classes added no verbs from this list.
 
 ## Practised
 
